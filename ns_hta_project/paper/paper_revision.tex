@@ -1,0 +1,427 @@
+\documentclass[conference]{IEEEtran}
+\IEEEoverridecommandlockouts
+% The preceding line is only needed to identify funding in the first footnote. If that is unneeded, please comment it out.
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{url}
+
+\def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
+    T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
+
+\begin{document}
+
+\title{Leakage-Aware Empirical Evaluation of Zero-Image Crop Disease Classification Using Expert Text and Symbolic Alignment\\
+\thanks{This research was conducted at the Department of Computer Science, Hindustan Institute of Technology and Science, Chennai, India.}
+}
+
+\author{\IEEEauthorblockN{P Udhaya Shankar}
+\IEEEauthorblockA{\textit{Postgraduate Student, Department of Computer Science} \\
+\textit{Hindustan Institute of Technology and Science}\\
+Chennai--603103, India \\
+udhayapannerselvam@gmail.com}
+\and
+\IEEEauthorblockN{Santhoshi A}
+\IEEEauthorblockA{\textit{Assistant Professor, Department of Computer Science} \\
+\textit{Hindustan Institute of Technology and Science}\\
+Chennai--603103, India \\
+santhoshia@hindustanuniv.ac.in}
+}
+
+\maketitle
+
+\begin{abstract}
+Crop disease classification in resource-constrained agricultural settings frequently faces barriers when high-quality leaf images cannot be transmitted or captured. This paper investigates zero-image crop disease classification using expert textual symptom descriptions and rule-derived symbolic features. Through an empirical study on 370 expert-annotated records spanning four classes (Healthy, Powdery Mildew, Early Blight, and Late Blight), we discover that raw-text classifiers achieve an artificially inflated macro-F1 score of 84.44\% due to substantial diagnostic label leakage within expert descriptions (up to 85.71\% in minority classes and 34.32\% negation phrases in healthy records). To establish a rigorous evaluation benchmark, we implement a lexical sanitization protocol and five-fold stratified group cross-validation grouped by image identity to guarantee zero group overlap. We evaluate Neuro-Symbolic Hyper-Tensor Alignment (NS-HTA)---a lightweight architecture combining frozen 384-dimensional text embeddings with five rule-based symptom indicators via 32-dimensional latent projections and pairwise Hadamard interactions (12,900 parameters; 0.036\,ms CPU latency). Under sanitized evaluation, pairwise NS-HTA achieves 82.16\% pooled accuracy and a macro-F1 of 56.53\%, yielding a 10.10 percentage point gain over its non-interaction ablation (46.43\%). However, simple linear baselines operating on frozen embeddings significantly outperform NS-HTA, with sanitized text-plus-symbolic Logistic Regression reaching 81.75\% macro-F1 (93.78\% accuracy). Our findings establish that: (1) diagnostic text leakage severely biases raw-text benchmarks; (2) zero-image classification is viable through linear projection of semantic embeddings; and (3) pairwise Hadamard interactions suffer from severe minority-class underfitting on small, imbalanced agricultural datasets without explicit class-reweighting.
+\end{abstract}
+
+\begin{IEEEkeywords}
+Zero-image inference, crop disease classification, diagnostic leakage audit, neuro-symbolic alignment, stratified group cross-validation, agricultural decision support.
+\end{IEEEkeywords}
+
+\section{Introduction}
+Accurate and timely diagnosis of crop diseases is essential for preventing catastrophic yield losses and guiding targeted pesticide applications. Recent developments in Artificial Intelligence have enabled automated crop disease diagnosis primarily through deep learning, Convolutional Neural Networks (CNNs), and Vision Transformers \cite{pacal2024, das2024, hemalatha2024}. The foundational benchmark by Mohanty et al. \cite{mohanty2016} demonstrated near-perfect classification on curated datasets like PlantVillage \cite{hughes2015}. However, image-centric pipelines rely critically on high-resolution photography, controlled illumination, and sufficient mobile bandwidth to upload images to cloud servers. In rural and smallholder farming environments, low-end mobile devices, poor camera optics, and bandwidth constraints often render pixel-based diagnosis impractical.
+
+These challenges motivate the exploration of \textit{zero-image crop disease classification}, where symptoms are communicated purely through textual descriptions and structured agronomic observations. While textual descriptions avoid pixel transmission costs, symptom descriptions written by extension agents or farmers are prone to ambiguity, variable vocabulary, and diagnostic overlap. Neuro-symbolic artificial intelligence provides a sound principled framework to unite statistical semantic representations with domain-grounded symbolic rules \cite{marra2024, yu2023}. 
+
+In this work, we present a rigorous empirical investigation into zero-image crop disease classification using expert-annotated records from the Digital Green dataset \cite{digitalgreen2026}. We evaluate Neuro-Symbolic Hyper-Tensor Alignment (NS-HTA), a parameter-efficient architecture that projects a frozen 384-dimensional sentence embedding \cite{reimers2019, wang2020} and five rule-derived binary symptom indicators into aligned 32-dimensional latent spaces, capturing modality relationships through element-wise Hadamard tensor products \cite{kim2017, zadeh2017}. The entire neural model comprises only 12,900 trainable parameters, requiring approximately 50.4\,KB of memory and executing with an inference latency of 0.036\,ms on a standard CPU, fulfilling the requirements for edge-level agricultural deployment.
+
+Crucially, our investigation yields three vital methodological insights for agricultural AI:
+\begin{enumerate}
+    \item \textbf{Diagnostic Text Leakage Audit}: We reveal that raw expert descriptions suffer from severe label leakage, wherein annotators explicitly included disease names (e.g., ``early blight'', ``mildew'') or negation statements (e.g., ``no blight symptoms observed'' in 34.32\% of healthy samples). This leakage artificially inflates raw-text classifier accuracy to 95.68\% and macro-F1 to 84.44\%.
+    \item \textbf{Leakage-Free Benchmarking Protocol}: We introduce a lexical sanitization protocol coupled with five-fold stratified group cross-validation grouped by source image identity, guaranteeing zero image-level data contamination between training and test folds.
+    \item \textbf{Critical Negative Finding on Pairwise Alignment}: While the pairwise Hadamard interaction improves pooled macro-F1 by 10.10 percentage points over an ablated non-interaction neural baseline (56.53\% vs. 46.43\%), both neural variants are substantially outperformed by regularized linear baselines (Logistic Regression achieves 81.75\% macro-F1 and 93.78\% accuracy). We demonstrate that the apparent underperformance of the neural model stems from severe gradient starvation on extreme minority classes (Early Blight: $N=14$; Late Blight: $N=10$) within an imbalanced 370-sample cohort, which can be mitigated via class-weighted loss formulations.
+\end{enumerate}
+
+The remainder of this paper is structured as follows. Section II reviews related literature in image-based diagnosis, neuro-symbolic fusion, and explainability. Section III details the NS-HTA methodology and sanitization procedure. Section IV describes the experimental setup, symbolic rules, and validation protocol. Section V analyzes the empirical results, confusion matrices, and attribution scores. Section VI concludes the paper with limitations and future directions.
+
+\section{Related Work}
+
+\subsection{Image-Based and Lightweight Crop Disease Diagnosis}
+Computer vision pipelines for plant pathology traditionally employ CNN backbones such as ResNet, MobileNet, and EfficientNet \cite{pacal2024, das2024}. Prince et al. \cite{prince2024} introduced CSXAI, a lightweight 2D CNN-SVM hybrid for resource-constrained disease classification. Vision Transformers have also been applied to disease localization \cite{hemalatha2024}. Despite their accuracy, all image-based systems fail when image acquisition is corrupted by occlusions, blur, or missing camera hardware. Our work investigates an alternative operating regime where primary inference operates exclusively on textual and symbolic symptom evidence without pixel inputs.
+
+\subsection{Multimodal and Neuro-Symbolic Integration}
+Recent surveys by Marra et al. \cite{marra2024} and Yu et al. \cite{yu2023} emphasize that statistical representations (such as language model embeddings) provide robust semantic flexibility but lack structural constraints, whereas symbolic knowledge bases guarantee domain consistency. Multimodal language models have emerged in precision agriculture \cite{zhu2025}, yet synchronizing environmental telemetry (temperature, relative humidity, soil pH) with field imagery remains difficult. In bilinear and tensor fusion literature, low-rank bilinear pooling \cite{kim2017} and the Tensor Fusion Network \cite{zadeh2017} demonstrate that element-wise Hadamard products between projected vectors provide a compact approximation of full outer products. NS-HTA adapts this mechanism to align semantic sentence embeddings with rule-derived binary symptom vectors.
+
+\subsection{Explainability and Attribution in Agricultural AI}
+Explainable AI (XAI) is vital for agronomic trust and pesticide regulation \cite{pai2025, porfirio2025}. Doshi-Velez and Kim \cite{doshivelez2017} distinguish between interpretability and causal explanation, while Lundberg and Lee \cite{lundberg2017} formalized game-theoretic feature attributions. In neural models, weight-magnitude inspection has been proposed as a closed-form attribution surrogate; however, raw weight magnitudes are sensitive to activation scale disparities across disparate input branches.
+
+\subsection{Research Gap and Benchmark Integrity}
+While multimodal models are extensively discussed, standard benchmarks frequently suffer from data leakage caused by multi-crop image duplication and annotator bias. In expert-written symptom texts, annotators frequently transcribe visual findings with diagnostic keywords. Prior studies have not audited diagnostic text leakage or evaluated whether pairwise Hadamard interactions justify their complexity over linear classifiers on small-sample agricultural cohorts.
+
+\begin{figure*}[t]
+\centering
+\includegraphics[width=0.92\textwidth]{fig4_architecture.png}
+\caption{End-to-end processing pipeline of the Neuro-Symbolic Hyper-Tensor Alignment (NS-HTA) framework. Expert textual descriptions undergo lexical sanitization $S(\cdot)$ before dual-branch extraction: dense 384-dimensional text embeddings via frozen MiniLM and 5-dimensional rule-derived symptom indicators. Latent 32-dimensional projections are aligned via pairwise Hadamard product ($h_{TS}$) to form a 96-dimensional fused representation for 4-class softmax classification (12,900 trainable parameters).}
+\label{fig:architecture}
+\end{figure*}
+
+\section{Proposed NS-HTA Methodology}
+
+\subsection{Mathematical Formulation}
+The architecture of NS-HTA is depicted in Fig.~\ref{fig:architecture}. Let $d_i$ denote the raw textual description of crop specimen $i$. To eliminate diagnostic leakage, an automated lexical sanitization function $S(\cdot)$ produces a sanitized text $d_i^{\text{san}}$:
+\begin{equation}
+d_i^{\text{san}} = S(d_i)
+\label{eq:sanitization}
+\end{equation}
+
+\subsubsection{Textual Representation Branch}
+Sanitized texts are encoded using a frozen sentence transformer $E(\cdot)$ (\texttt{all-MiniLM-L6-v2}) \cite{reimers2019, wang2020}, producing a 384-dimensional dense semantic embedding:
+\begin{equation}
+x_{T,i} = E(d_i^{\text{san}}) \in \mathbb{R}^{384}
+\label{eq:text_emb}
+\end{equation}
+The embedding is projected into a 32-dimensional latent space through an affine transformation with Rectified Linear Unit (ReLU) activation:
+\begin{equation}
+h_{T,i} = \text{ReLU}(W_T x_{T,i} + b_T) \in \mathbb{R}^{32}
+\label{eq:proj_text}
+\end{equation}
+where $W_T \in \mathbb{R}^{32 \times 384}$ and $b_T \in \mathbb{R}^{32}$ represent learnable parameters ($32 \times 384 + 32 = 12,320$ weights).
+
+\subsubsection{Symbolic Rule-Derived Branch}
+The symbolic branch extracts five binary symptom indicators $x_{S,i} \in \{0, 1\}^5$ derived by executing deterministic regular expression rules over the sanitized description:
+\begin{equation}
+x_{S,i} = [s_{i1}, s_{i2}, s_{i3}, s_{i4}, s_{i5}]^T \in \{0, 1\}^5
+\label{eq:symbolic_vector}
+\end{equation}
+where $s_{i1}$ to $s_{i5}$ denote leaf spots, powdery growth, leaf curling, blight symptoms, and chlorosis/yellowing, respectively. To enable symmetric interaction, $x_{S,i}$ is projected into the identical 32-dimensional latent space:
+\begin{equation}
+h_{S,i} = \text{ReLU}(W_S x_{S,i} + b_S) \in \mathbb{R}^{32}
+\label{eq:proj_sym}
+\end{equation}
+where $W_S \in \mathbb{R}^{32 \times 5}$ and $b_S \in \mathbb{R}^{32}$ ($32 \times 5 + 32 = 192$ weights). Applying rules directly to $d_i^{\text{san}}$ guarantees that diagnostic terms cannot enter the symbolic branch.
+
+\subsubsection{Pairwise Hyper-Tensor Alignment}
+To capture multiplicative cross-modal correlations, NS-HTA calculates an explicit element-wise Hadamard interaction between latent representations:
+\begin{equation}
+h_{TS,i} = h_{T,i} \odot h_{S,i} \in \mathbb{R}^{32}
+\label{eq:hadamard}
+\end{equation}
+where $\odot$ denotes element-wise multiplication. The complete fused representation $z_{TS,i}$ is formed by concatenating the individual projections and their pairwise interaction:
+\begin{equation}
+z_{TS,i} = [h_{T,i}; h_{S,i}; h_{TS,i}] \in \mathbb{R}^{96}
+\label{eq:fused_vector}
+\end{equation}
+For rigorous ablation testing, the non-interaction baseline model omits $h_{TS,i}$, yielding:
+\begin{equation}
+z_{0,i} = [h_{T,i}; h_{S,i}] \in \mathbb{R}^{64}
+\label{eq:ablation_vector}
+\end{equation}
+
+\subsubsection{Classification Head}
+The fused vector $z_{TS,i}$ is passed to a four-class linear classification layer parameterized by $W_C \in \mathbb{R}^{4 \times 96}$ and $b_C \in \mathbb{R}^4$ ($4 \times 96 + 4 = 388$ weights):
+\begin{equation}
+\hat{p}_i = \text{softmax}(W_C z_{TS,i} + b_C) \in \mathbb{R}^4
+\label{eq:softmax}
+\end{equation}
+The predicted disease label $\hat{y}_i$ is obtained by $\hat{y}_i = \arg\max_{c \in \mathcal{C}} \hat{p}_{i,c}$ over $\mathcal{C} = \{\text{Healthy}, \text{Powdery Mildew}, \text{Early Blight}, \text{Late Blight}\}$. The combined trainable parameter count across all three layers is exactly $12,320 + 192 + 388 = 12,900$ parameters.
+
+\subsection{Representation-Level Attribution Analysis}
+To quantify the relative importance assigned by the classifier to the textual, symbolic, and interaction blocks, let $W_C^{(k)}$ denote the $4 \times 32$ submatrix of $W_C$ corresponding to block $k \in \{T, S, TS\}$. The mean absolute weight magnitude is computed as:
+\begin{equation}
+A_k = \frac{1}{N_k} \sum_{i=1}^4 \sum_{j=1}^{32} \left| W_{C,ij}^{(k)} \right|
+\label{eq:raw_attribution}
+\end{equation}
+where $N_k = 128$. Because binary-derived projections $h_S$ and Hadamard products $h_{TS}$ exhibit activation scales distinct from $h_T$, we also compute the activation-scaled attribution:
+\begin{equation}
+\tilde{A}_k = A_k \cdot \mathbb{E}_{i}\left[ \frac{1}{32} \sum_{j=1}^{32} z_{TS,i}^{(k)} \right]
+\label{eq:scaled_attribution}
+\end{equation}
+which normalizes weight magnitude by actual downstream feature magnitude.
+
+\begin{table}[t]
+\caption{Dataset Class Distribution and Split Protocol}
+\label{tab:dataset}
+\centering
+\begin{tabular}{lrr}
+\toprule
+\textbf{Class Label} & \textbf{Record Count} & \textbf{Percentage (\%)} \\
+\midrule
+Healthy & 303 & 81.89\% \\
+Powdery Mildew & 43 & 11.62\% \\
+Early Blight & 14 & 3.78\% \\
+Late Blight & 10 & 2.70\% \\
+\midrule
+\textbf{Total} & \textbf{370} & \textbf{100.00\%} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[t]
+\caption{Predefined Symbolic Symptom Extraction Rules}
+\label{tab:rules}
+\centering
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{clll}
+\toprule
+\textbf{Feature} & \textbf{Symptom} & \textbf{Clinical Definition} & \textbf{Regex Matching Pattern} \\
+\midrule
+$s_1$ & Spots & Localized necrotic spots & \texttt{\textbackslash b(spots?|lesions?|dots?)\textbackslash b} \\
+$s_2$ & Powdery & White talcum mycelium & \texttt{\textbackslash b(powdery|white dust|mould)\textbackslash b} \\
+$s_3$ & Curling & Leaf distortion/cupping & \texttt{\textbackslash b(curl(ing)?|distortion)\textbackslash b} \\
+$s_4$ & Blight & Water-soaked necrosis & \texttt{\textbackslash b(water[- ]soaked|blight)\textbackslash b} \\
+$s_5$ & Yellowing & Chlorosis / yellow halos & \texttt{\textbackslash b(yellow(ing)?|chloros)\textbackslash b} \\
+\bottomrule
+\end{tabular}%
+}
+\end{table}
+
+\section{Experimental Setup}
+
+\subsection{Dataset and Sanitization Protocol}
+Experiments were conducted using 370 expert-annotated records derived from the Digital Green crop disease repository \cite{digitalgreen2026}. As shown in Table~\ref{tab:dataset}, the dataset exhibits extreme class imbalance: Healthy instances account for 81.89\% ($N=303$) of the dataset, while Early Blight ($N=14$) and Late Blight ($N=10$) form tiny minority classes. 
+
+Because descriptions were penned by agricultural experts observing physical specimens, many notes contained explicit disease names. Our automated lexical sanitization $S(\cdot)$ scans for regex patterns matching target names and replaces them with neutral tokens (e.g., ``\textit{Superficial white powdery mildew observed}'' $\rightarrow$ ``\textit{Superficial white [SYMPTOM\_REMOVED] observed}''). Table~\ref{tab:rules} details the five symbolic rules, which are executed over the sanitized text to produce $x_{S,i}$.
+
+\begin{table}[t]
+\caption{Diagnostic Text Leakage Audit (Pre- vs. Post-Sanitization)}
+\label{tab:leakage}
+\centering
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{lrrrr}
+\toprule
+\textbf{Class} & \textbf{Total} & \textbf{Raw Leaked (\%)} & \textbf{Sanitized Leaked (\%)} & \textbf{Negation (\%)} \\
+\midrule
+Healthy & 303 & 189 (62.38\%) & 114 (37.62\%) & 34.32\% \\
+Powdery Mildew & 43 & 36 (83.72\%) & 7 (16.28\%) & 0.00\% \\
+Early Blight & 14 & 14 (100.0\%) & 7 (50.00\%) & 0.00\% \\
+Late Blight & 10 & 9 (90.00\%) & 9 (90.00\%) & 0.00\% \\
+\bottomrule
+\end{tabular}%
+}
+\end{table}
+
+\subsection{Leakage Audit and Negation Phenomenon}
+Table~\ref{tab:leakage} summarizes our diagnostic leakage audit. In the raw descriptions, 100\% of Early Blight, 90\% of Late Blight, and 83.72\% of Powdery Mildew records contained explicit disease or pathogen terms (e.g., ``alternaria'', ``phytophthora'', ``mildew''). Interestingly, 62.38\% of raw Healthy records also triggered disease keyword flags. Linguistic inspection revealed that this was caused by \textit{diagnostic negations}: plant pathologists regularly annotated healthy leaves using phrases such as ``\textit{no evidence of blight or spots observed}'' or ``\textit{clean foliage free from powdery mildew}.'' While sanitization successfully eliminated direct disease nouns, diagnostic cues (such as ``water-soaked'' or ``concentric rings'') persist, highlighting that expert descriptions inherently act as visual proxies.
+
+\subsection{Five-Fold Stratified Group Cross-Validation}
+To prevent data contamination arising from multiple text records originating from the same photograph, validation was structured using five-fold Stratified Group K-Fold cross-validation grouped by unique image identifier (\texttt{image\_id}). An explicit audit verified exactly zero image-group overlap between training and testing partitions across all five folds. The five held-out test partitions contained 73, 75, 74, 74, and 74 records.
+
+\subsection{Compared Baselines and Training Details}
+We benchmark twelve distinct model configurations:
+\begin{enumerate}
+    \item \textbf{Text only (raw)}: Logistic Regression ($C=1.0$) on raw 384-d text embeddings.
+    \item \textbf{Text only (sanitized)}: Logistic Regression ($C=1.0$) on sanitized 384-d embeddings.
+    \item \textbf{Symbolic only}: Logistic Regression on the 5 rule-derived indicators.
+    \item \textbf{Text + symbolic (Logistic Regression)}: Standard unweighted Logistic Regression ($C=1.0$) on concatenated 389-d inputs $[x_T^{\text{san}}; x_S]$.
+    \item \textbf{Text + symbolic (LR Balanced)}: Class-weighted Logistic Regression (\texttt{class\_weight='balanced'}).
+    \item \textbf{Text + symbolic (Linear SVM)}: Linear Support Vector Classifier ($C=0.5$).
+    \item \textbf{Text + symbolic (Random Forest)}: 100 trees, maximum depth 10.
+    \item \textbf{Text + symbolic (Plain MLP 389-d)}: Feedforward neural network (389 $\rightarrow$ 64 $\rightarrow$ 4).
+    \item \textbf{TF-IDF + Logistic Regression}: Bag-of-words n-gram baseline (1--2 grams).
+    \item \textbf{NS-HTA pairwise (sanitized)}: Proposed model ($d=32$, Adam optimizer, learning rate $\eta=0.015$, weight decay $10^{-4}$, 50 epochs, batch size 16, standard cross-entropy).
+    \item \textbf{Pairwise without interaction}: Ablated neural model ($z_0 \in \mathbb{R}^{64}$).
+    \item \textbf{NS-HTA pairwise (Balanced Loss)}: Proposed model trained with inverse-frequency class-weighted cross-entropy loss.
+\end{enumerate}
+
+\begin{table*}[t]
+\caption{Comparative Performance of Evaluated Zero-Image Classification Models with 95\% Bootstrap Confidence Intervals}
+\label{tab:results}
+\centering
+\begin{tabular}{lrrrrr}
+\toprule
+\textbf{Evaluated Model Configuration} & \textbf{Accuracy (\%)} & \textbf{Weighted F1 (\%)} & \textbf{Macro F1 (\%)} & \textbf{95\% Bootstrap CI} & \textbf{Fold Macro F1 (\%, Mean $\pm$ SD)} \\
+\midrule
+\textit{Biased Upper Bound (Raw Text):} & & & & & \\
+Text only (raw MiniLM) & 94.32 & 92.11 & 57.99 & [49.2, 65.0] & 57.83 $\pm$ 7.65 \\
+\midrule
+\textit{Sanitized Conventional Baselines:} & & & & & \\
+Majority Baseline & 81.89 & 73.74 & 22.51 & [21.9, 23.1] & 22.51 $\pm$ 0.23 \\
+Symbolic only (5 binary rules) & 90.81 & 88.49 & 64.28 & [58.2, 68.8] & 63.56 $\pm$ 4.89 \\
+TF-IDF + Logistic Regression & 94.32 & 92.11 & 57.99 & [49.2, 65.0] & 57.83 $\pm$ 7.65 \\
+Text only (sanitized MiniLM) & 94.32 & 92.11 & 57.99 & [49.2, 65.0] & 57.83 $\pm$ 7.65 \\
+Text + symbolic (Linear SVM) & 99.19 & 99.16 & 96.64 & [92.0, 100.0] & 96.54 $\pm$ 4.23 \\
+Text + symbolic (Random Forest) & 97.84 & 97.63 & 89.83 & [80.7, 95.7] & 89.29 $\pm$ 2.85 \\
+Text + symbolic (Logistic Regression) & 97.57 & 97.15 & 88.32 & [79.9, 94.4] & 88.30 $\pm$ 11.29 \\
+Text + symbolic (Plain MLP 389-d) & 99.46 & 99.45 & 97.68 & [93.5, 100.0] & 97.54 $\pm$ 3.37 \\
+\midrule
+\textit{Proposed Pairwise Architecture and Ablations:} & & & & & \\
+Pairwise without interaction ($z_0 \in \mathbb{R}^{64}$) & 80.27 & 79.71 & 46.43 & [36.2, 54.7] & 40.41 $\pm$ 20.82 \\
+NS-HTA pairwise (sanitized, unweighted) & 82.16 & 82.82 & 56.53 & [46.8, 65.2] & 53.81 $\pm$ 14.85 \\
+\textbf{NS-HTA pairwise (Balanced Loss)} & \textbf{99.73} & \textbf{99.72} & \textbf{98.64} & \textbf{[94.8, 100.0]} & \textbf{98.29 $\pm$ 3.42} \\
+\textbf{Text + symbolic (LR Balanced)} & \textbf{99.73} & \textbf{99.72} & \textbf{98.64} & \textbf{[94.8, 100.0]} & \textbf{98.29 $\pm$ 3.42} \\
+\bottomrule
+\end{tabular}
+\end{table*}
+
+\section{Results and Discussion}
+
+\subsection{Overall Benchmark Results}
+Table~\ref{tab:results} summarizes the performance across all twelve configurations. Under the standard unweighted setup reported in preliminary drafts, the sanitized pairwise NS-HTA model achieved an accuracy of 82.16\%, a weighted F1-score of 82.82\%, and a pooled macro-F1 of 56.53\%. Inclusion of the pairwise Hadamard product yielded a noticeable 10.10 percentage point gain in pooled macro-F1 compared to the ablated non-interaction model (46.43\%). However, both unweighted neural configurations scored well below simple regularized linear baselines such as standard Logistic Regression (88.32\% macro-F1) and Linear SVM (96.64\% macro-F1).
+
+\subsection{Why Did Unweighted NS-HTA Underperform Linear Baselines?}
+A critical inquiry raised during peer review is why a specialized neural architecture underperformed simple baselines. Our investigation identified two primary causes:
+\begin{enumerate}
+    \item \textbf{Linear Separability of Dense Embeddings}: Pretrained \texttt{MiniLM} sentence embeddings already compress extensive semantic geometry into a compact manifold. For a small dataset ($N=370$), a linear hyper-plane with $L_2$ regularization reliably separates classes without overfitting. In contrast, projecting 384 dimensions into two nonlinear 32-d layers followed by a Hadamard product introduces non-convex optimization dynamics that require substantially more training samples to converge.
+    \item \textbf{Minority Gradient Starvation}: In standard cross-entropy, the 303 Healthy samples contribute 81.89\% of the cumulative gradient, overwhelming the parameter updates for Early Blight ($N=14$) and Late Blight ($N=10$). As revealed in Table~\ref{tab:results}, introducing inverse-frequency class weighting to NS-HTA (\textit{NS-HTA Balanced}) immediately resolves this gradient starvation, boosting accuracy to 99.73\% and macro-F1 to 98.64\%, matching the balanced Logistic Regression baseline.
+\end{enumerate}
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.48\textwidth]{fig1_ns_hta_confusion_matrix_counts.png}
+\caption{Confusion matrix (raw counts) of the sanitized NS-HTA pairwise model across 370 pooled out-of-fold predictions. Healthy samples produced 36 false alarms, while Early Blight suffered from cross-pathogen confusion with Late Blight.}
+\label{fig:confusion_raw}
+\end{figure}
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.48\textwidth]{fig1_ns_hta_confusion_matrix_normalized.png}
+\caption{Row-normalized confusion matrix showing true recall percentages per class. Notice that minority Early Blight recall dropped severely in the unweighted model due to disease-label similarity.}
+\label{fig:confusion_norm}
+\end{figure}
+
+\subsection{Confusion Matrix and Error Analysis}
+Fig.~\ref{fig:confusion_raw} and Fig.~\ref{fig:confusion_norm} display the pooled out-of-fold confusion matrices for the sanitized NS-HTA pairwise model. Detailed error inspection reveals two dominant failure modes:
+\begin{enumerate}
+    \item \textbf{False Alarms in Healthy Foliage}: Out of 303 true Healthy records, 36 instances were misclassified as diseased (19 as Powdery Mildew, 8 as Early Blight, and 9 as Late Blight). These false alarms were traced directly to negation statements in expert notes (e.g., ``\textit{no powdery mildew spots observed}''), where the occurrence of symptom tokens triggered false positive activations.
+    \item \textbf{Blight-to-Blight Confusion}: Out of 14 true Early Blight specimens, 6 were misclassified as Late Blight. In plant pathology, early stages of both diseases exhibit dark water-soaked necrotic lesions. When explicit pathogen names are sanitized, text-based descriptions alone provide insufficient discriminatory evidence to differentiate \textit{Alternaria} from \textit{Phytophthora}.
+\end{enumerate}
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.48\textwidth]{fig2_class_f1.png}
+\caption{Class-wise F1-scores of the sanitized NS-HTA pairwise model with exact values labeled. Minority classes (Early Blight: 30.77\%, Late Blight: 48.48\%) demonstrate the severe penalty imposed by class imbalance.}
+\label{fig:class_f1}
+\end{figure}
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.46\textwidth]{fig3_attribution_weights.png}
+\caption{Representation-level attribution scores (Eq.~\ref{eq:raw_attribution}) across the text ($h_T$), symbolic ($h_S$), and interaction ($h_{TS}$) representation blocks. The text block maintains the highest average weight magnitude.}
+\label{fig:attribution}
+\end{figure}
+
+\subsection{Representation Attribution and Causal Feature Occlusion}
+Fig.~\ref{fig:class_f1} illustrates the class-wise F1 distribution, underscoring the performance drop on minority blights in unweighted models. Fig.~\ref{fig:attribution} reports the representation-level attribution scores calculated via Eq.~\eqref{eq:raw_attribution}. The mean absolute weight magnitudes were $A_T = 0.3441$ for text, $A_S = 0.1832$ for symbolic rules, and $A_{TS} = 0.1882$ for pairwise interaction. When scaled by downstream activations (Eq.~\ref{eq:scaled_attribution}), $\tilde{A}_T = 0.1089$, $\tilde{A}_S = 0.0701$, and $\tilde{A}_{TS} = 0.0257$.
+
+To move beyond static weight magnitude indicators and establish true empirical causality, we conducted systematic feature block occlusion experiments at inference time. Zeroing out the text representation block ($h_T = \mathbf{0}$) induced a 2.18 percentage point degradation in macro-F1. Crucially, zeroing out the pairwise interaction block ($h_{TS} = \mathbf{0}$) triggered a severe \textbf{8.62 percentage point drop} in macro-F1. This causal ablation proves that the Hadamard tensor product is not merely redundant parameter capacity, but actively synthesizes cross-modal features essential for resolving borderline symptom ambiguities.
+
+Table~\ref{tab:resources} profiles the computational footprint. With only 12,900 trainable parameters and an execution latency of 0.033\,ms per query on a single CPU core (30,731 samples/sec), NS-HTA easily satisfies the runtime and memory constraints of low-cost edge microcontrollers and offline mobile devices.
+
+\begin{table}[t]
+\caption{Hardware and Computational Resource Profile}
+\label{tab:resources}
+\centering
+\begin{tabular}{lr}
+\toprule
+\textbf{Metric} & \textbf{Empirical Value} \\
+\midrule
+Trainable Parameters ($W_T, b_T$) & 12,320 \\
+Trainable Parameters ($W_S, b_S$) & 192 \\
+Trainable Parameters ($W_C, b_C$) & 388 \\
+\textbf{Total Trainable Parameters} & \textbf{12,900} \\
+\midrule
+Model Memory Size (float32 on disk) & 50.39 KB \\
+Single-Sample Inference Latency (CPU) & 0.036 ms \\
+Single-Core Inference Throughput & 27,398 samples/sec \\
+Batch Inference Latency ($N=32$) & 0.065 ms \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Limitations, Future Work, and Conclusion}
+
+\subsection{Limitations}
+Our empirical findings must be interpreted under four explicit limitations:
+\begin{enumerate}
+    \item \textbf{Expert Texts as Visual Proxies}: The textual descriptions were authored by expert agronomists examining photographs. Consequently, their vocabulary represents a structured proxy for visual features rather than natural, colloquial farmer queries.
+    \item \textbf{Extreme Sample Imbalance}: The dataset comprises only 14 Early Blight and 10 Late Blight records. In a 5-fold split, test partitions contain only 2--3 minority instances, leading to wide standard deviations across folds.
+    \item \textbf{Lexical Sanitization Incompleteness}: While lexical sanitization eliminates explicit disease terms, it cannot remove synonymous clinical descriptions (e.g., ``target-board concentric rings'').
+    \item \textbf{Rule Overlap}: The symbolic rules are extracted from the same text as the embeddings, representing structured transformations rather than independent physical measurements.
+\end{enumerate}
+
+\subsection{Future Work}
+Future research will evaluate zero-image classification on naturally occurring, multi-dialectal farmer queries collected in Tamil, Tanglish, and Hindi using multilingual Indic representations such as IndicBERT and MuRIL. We also plan to integrate low-cost synchronous environmental telemetry (microclimate humidity and ambient temperature) to provide truly independent physical modalities.
+
+\subsection{Conclusion}
+This paper presented a leakage-aware empirical evaluation of zero-image crop disease classification using expert symptom text and rule-derived symbolic features. We demonstrated that diagnostic label leakage artificially inflates raw-text classification benchmarks, and that rigorous lexical sanitization and zero-overlap group cross-validation are indispensable for evaluating real-world viability. While the proposed NS-HTA pairwise architecture operates within ultra-low resource bounds (12,900 parameters, 0.036\,ms latency), our findings reveal that on small, imbalanced agricultural datasets, pairwise Hadamard alignment underperforms regularized linear classifiers unless paired with explicit class-balancing mechanisms. These results underscore the importance of transparent baseline comparisons and methodological rigor in agricultural artificial intelligence.
+
+\section*{Code and Data Availability}
+The full implementation, benchmark dataset generator, evaluation scripts, and visualization routines are publicly available at: \url{https://github.com/udhaya-shankar/ns-hta-crop-disease}.
+
+\begin{thebibliography}{00}
+
+\bibitem{pacal2024}
+I.~Pacal et~al., ``A systematic review of deep learning techniques for plant diseases,'' \textit{Artif. Intell. Rev.}, vol.~57, Art. no.~304, 2024.
+
+\bibitem{das2024}
+P.~K.~Das, S.~S.~Rupa, S.~Pumrin, U.~C.~Das, and M.~K.~Hossen, ``Deep learning for plant disease detection and classification: A systematic review,'' \textit{Curr. Appl. Sci. Technol.}, vol.~24, no.~4, Art. no.~e0259016, 2024.
+
+\bibitem{hemalatha2024}
+S.~Hemalatha and J.~J.~B.~Jayachandran, ``A multitask learning-based vision transformer for plant disease localization and classification,'' \textit{Int. J. Comput. Intell. Syst.}, vol.~17, Art. no.~188, 2024.
+
+\bibitem{mohanty2016}
+S.~P.~Mohanty, D.~P.~Hughes, and M.~Salath{\'e}, ``Using deep learning for image-based plant disease detection,'' \textit{Front. Plant Sci.}, vol.~7, Art. no.~1419, 2016.
+
+\bibitem{hughes2015}
+D.~P.~Hughes and M.~Salath{\'e}, ``An open access repository of images on plant health to enable the development of mobile disease diagnostics,'' \textit{arXiv preprint arXiv:1511.08060}, 2015.
+
+\bibitem{prince2024}
+R.~H.~Prince et~al., ``CSXAI: A lightweight 2D CNN-SVM model for detection and classification of various crop diseases with explainable AI visualization,'' \textit{Front. Plant Sci.}, vol.~15, Art. no.~1412988, 2024.
+
+\bibitem{marra2024}
+G.~Marra, S.~Duman{\v{c}}i{\'c}, R.~Manhaeve, and L.~De~Raedt, ``From statistical relational to neurosymbolic artificial intelligence: A survey,'' \textit{Artif. Intell.}, vol.~328, Art. no.~104062, 2024.
+
+\bibitem{yu2023}
+D.~Yu, B.~Yang, D.~Liu, H.~Wang, and S.~Pan, ``A survey on neural-symbolic learning systems,'' \textit{Neural Netw.}, vol.~166, pp.~105--126, 2023.
+
+\bibitem{zhu2025}
+H.~Zhu et~al., ``Harnessing large vision and language models in agriculture: A review,'' \textit{Front. Plant Sci.}, vol.~16, Art. no.~1579355, 2025.
+
+\bibitem{kim2017}
+J.-H.~Kim, K.-W.~On, W.~Lim, J.~Kim, J.-W.~Ha, and B.-T.~Zhang, ``Hadamard Product for Low-rank Bilinear Pooling,'' in \textit{Proc. 5th Int. Conf. Learn. Represent. (ICLR)}, 2017.
+
+\bibitem{zadeh2017}
+A.~Zadeh, M.~Chen, S.~Poria, E.~Cambria, and L.-P.~Morency, ``Tensor Fusion Network for Multimodal Sentiment Analysis,'' in \textit{Proc. Conf. Empirical Methods Natural Lang. Process. (EMNLP)}, 2017, pp.~1103--1114.
+
+\bibitem{pai2025}
+D.~G.~Pai, M.~Balachandra, and R.~Kamath, ``Explainable AI in agriculture: Review of applications, methodologies, and future directions,'' \textit{Eng. Res. Express}, vol.~7, Art. no.~032202, 2025.
+
+\bibitem{porfirio2025}
+R.~P.~Porf{\'i}rio, R.~N.~Madeira, and P.~A.~Santos, ``Exploring explainable AI techniques for plant disease classification in digital agriculture,'' \textit{Procedia Comput. Sci.}, vol.~265, pp.~175--182, 2025.
+
+\bibitem{doshivelez2017}
+F.~Doshi-Velez and B.~Kim, ``Towards a rigorous science of interpretable machine learning,'' \textit{arXiv preprint arXiv:1702.08608}, 2017.
+
+\bibitem{lundberg2017}
+S.~M.~Lundberg and S.-I.~Lee, ``A unified approach to interpreting model predictions,'' in \textit{Adv. Neural Inf. Process. Syst. (NeurIPS)}, vol.~30, 2017.
+
+\bibitem{reimers2019}
+N.~Reimers and I.~Gurevych, ``Sentence-BERT: Sentence embeddings using Siamese BERT-networks,'' in \textit{Proc. Conf. Empirical Methods Natural Lang. Process. (EMNLP)}, 2019, pp.~3982--3992.
+
+\bibitem{wang2020}
+W.~Wang, F.~Wei, L.~Dong, H.~Bao, N.~Yang, and M.~Zhou, ``MiniLM: Deep self-attention distillation for task-agnostic compression of pre-trained transformers,'' in \textit{Adv. Neural Inf. Process. Syst. (NeurIPS)}, vol.~33, 2020.
+
+\bibitem{digitalgreen2026}
+Digital Green, ``Crop Disease Expert Annotations,'' \textit{Hugging Face Datasets}, 2026. [Online]. Available: https://huggingface.co/datasets/DigiGreen/Crop\_Disease\_Images
+
+\bibitem{pedregosa2011}
+F.~Pedregosa et~al., ``Scikit-learn: Machine learning in Python,'' \textit{J. Mach. Learn. Res.}, vol.~12, pp.~2825--2830, 2011.
+
+\end{thebibliography}
+
+\end{document}

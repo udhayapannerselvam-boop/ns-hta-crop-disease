@@ -1,0 +1,519 @@
+{
+  "raw_leakage_audit": {
+    "Healthy": {
+      "total_records": 303,
+      "leaked_records": 189,
+      "leakage_percentage": 62.37623762376238,
+      "negated_records": 76,
+      "negation_percentage": 25.082508250825082
+    },
+    "Powdery Mildew": {
+      "total_records": 43,
+      "leaked_records": 36,
+      "leakage_percentage": 83.72093023255815,
+      "negated_records": 0,
+      "negation_percentage": 0.0
+    },
+    "Early Blight": {
+      "total_records": 14,
+      "leaked_records": 14,
+      "leakage_percentage": 100.0,
+      "negated_records": 0,
+      "negation_percentage": 0.0
+    },
+    "Late Blight": {
+      "total_records": 10,
+      "leaked_records": 9,
+      "leakage_percentage": 90.0,
+      "negated_records": 0,
+      "negation_percentage": 0.0
+    }
+  },
+  "sanitized_leakage_audit": {
+    "Healthy": {
+      "total_records": 303,
+      "leaked_records": 114,
+      "leakage_percentage": 37.62376237623762,
+      "negated_records": 0,
+      "negation_percentage": 0.0
+    },
+    "Powdery Mildew": {
+      "total_records": 43,
+      "leaked_records": 7,
+      "leakage_percentage": 16.27906976744186,
+      "negated_records": 0,
+      "negation_percentage": 0.0
+    },
+    "Early Blight": {
+      "total_records": 14,
+      "leaked_records": 7,
+      "leakage_percentage": 50.0,
+      "negated_records": 0,
+      "negation_percentage": 0.0
+    },
+    "Late Blight": {
+      "total_records": 10,
+      "leaked_records": 9,
+      "leakage_percentage": 90.0,
+      "negated_records": 0,
+      "negation_percentage": 0.0
+    }
+  },
+  "models": {
+    "Text only (raw)": {
+      "accuracy": 94.32432432432432,
+      "weighted_f1": 92.10617597614502,
+      "macro_f1": 57.98620883760203,
+      "fold_macro_f1_mean": 57.83037020905923,
+      "fold_macro_f1_sd": 7.647434234696165,
+      "per_class": {
+        "Healthy": {
+          "precision": 93.51851851851852,
+          "recall": 100.0,
+          "f1": 96.65071770334929,
+          "support": 303
+        },
+        "Powdery Mildew": {
+          "precision": 100.0,
+          "recall": 100.0,
+          "f1": 100.0,
+          "support": 43
+        },
+        "Early Blight": {
+          "precision": 100.0,
+          "recall": 21.428571428571427,
+          "f1": 35.294117647058826,
+          "support": 14
+        },
+        "Late Blight": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 10
+        }
+      }
+    },
+    "Text + symbolic (Logistic Regression)": {
+      "accuracy": 97.56756756756756,
+      "weighted_f1": 97.14582104569266,
+      "macro_f1": 88.3183568677792,
+      "fold_macro_f1_mean": 88.30408602150537,
+      "fold_macro_f1_sd": 11.29201417742391,
+      "per_class": {
+        "Healthy": {
+          "precision": 97.11538461538461,
+          "recall": 100.0,
+          "f1": 98.53658536585365,
+          "support": 303
+        },
+        "Powdery Mildew": {
+          "precision": 100.0,
+          "recall": 100.0,
+          "f1": 100.0,
+          "support": 43
+        },
+        "Early Blight": {
+          "precision": 100.0,
+          "recall": 42.857142857142854,
+          "f1": 60.0,
+          "support": 14
+        },
+        "Late Blight": {
+          "precision": 100.0,
+          "recall": 90.0,
+          "f1": 94.73684210526315,
+          "support": 10
+        }
+      }
+    },
+    "Text only (sanitized)": {
+      "accuracy": 94.32432432432432,
+      "weighted_f1": 92.10617597614502,
+      "macro_f1": 57.98620883760203,
+      "fold_macro_f1_mean": 57.83037020905923,
+      "fold_macro_f1_sd": 7.647434234696165,
+      "per_class": {
+        "Healthy": {
+          "precision": 93.51851851851852,
+          "recall": 100.0,
+          "f1": 96.65071770334929,
+          "support": 303
+        },
+        "Powdery Mildew": {
+          "precision": 100.0,
+          "recall": 100.0,
+          "f1": 100.0,
+          "support": 43
+        },
+        "Early Blight": {
+          "precision": 100.0,
+          "recall": 21.428571428571427,
+          "f1": 35.294117647058826,
+          "support": 14
+        },
+        "Late Blight": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 10
+        }
+      }
+    },
+    "Text + symbolic (Linear SVM)": {
+      "accuracy": 99.1891891891892,
+      "weighted_f1": 99.16328386382833,
+      "macro_f1": 96.63798089387926,
+      "fold_macro_f1_mean": 96.54337713950233,
+      "fold_macro_f1_sd": 4.233968873187745,
+      "per_class": {
+        "Healthy": {
+          "precision": 99.01960784313727,
+          "recall": 100.0,
+          "f1": 99.50738916256158,
+          "support": 303
+        },
+        "Powdery Mildew": {
+          "precision": 100.0,
+          "recall": 100.0,
+          "f1": 100.0,
+          "support": 43
+        },
+        "Early Blight": {
+          "precision": 100.0,
+          "recall": 85.71428571428571,
+          "f1": 92.3076923076923,
+          "support": 14
+        },
+        "Late Blight": {
+          "precision": 100.0,
+          "recall": 90.0,
+          "f1": 94.73684210526315,
+          "support": 10
+        }
+      }
+    },
+    "Symbolic only": {
+      "accuracy": 90.81081081081082,
+      "weighted_f1": 88.4890975534358,
+      "macro_f1": 64.27645016339869,
+      "fold_macro_f1_mean": 63.56042433968221,
+      "fold_macro_f1_sd": 4.891691309091288,
+      "per_class": {
+        "Healthy": {
+          "precision": 89.91097922848664,
+          "recall": 100.0,
+          "f1": 94.6875,
+          "support": 303
+        },
+        "Powdery Mildew": {
+          "precision": 100.0,
+          "recall": 58.139534883720934,
+          "f1": 73.52941176470588,
+          "support": 43
+        },
+        "Early Blight": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 14
+        },
+        "Late Blight": {
+          "precision": 100.0,
+          "recall": 80.0,
+          "f1": 88.88888888888889,
+          "support": 10
+        }
+      }
+    },
+    "Text + symbolic (Random Forest)": {
+      "accuracy": 97.83783783783784,
+      "weighted_f1": 97.63349543800571,
+      "macro_f1": 89.82771978639919,
+      "fold_macro_f1_mean": 89.29315646586701,
+      "fold_macro_f1_sd": 2.8549270644554015,
+      "per_class": {
+        "Healthy": {
+          "precision": 97.42765273311898,
+          "recall": 100.0,
+          "f1": 98.69706840390879,
+          "support": 303
+        },
+        "Powdery Mildew": {
+          "precision": 100.0,
+          "recall": 100.0,
+          "f1": 100.0,
+          "support": 43
+        },
+        "Early Blight": {
+          "precision": 100.0,
+          "recall": 64.28571428571429,
+          "f1": 78.26086956521739,
+          "support": 14
+        },
+        "Late Blight": {
+          "precision": 100.0,
+          "recall": 70.0,
+          "f1": 82.35294117647058,
+          "support": 10
+        }
+      }
+    },
+    "Majority baseline": {
+      "accuracy": 81.89189189189189,
+      "weighted_f1": 73.73920726075258,
+      "macro_f1": 22.511144130757803,
+      "fold_macro_f1_mean": 22.510730660423373,
+      "fold_macro_f1_sd": 0.22643918868540502,
+      "per_class": {
+        "Healthy": {
+          "precision": 81.89189189189189,
+          "recall": 100.0,
+          "f1": 90.04457652303121,
+          "support": 303
+        },
+        "Powdery Mildew": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 43
+        },
+        "Early Blight": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 14
+        },
+        "Late Blight": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 10
+        }
+      }
+    },
+    "Text + symbolic (LR Balanced)": {
+      "accuracy": 99.72972972972973,
+      "weighted_f1": 99.72283998209603,
+      "macro_f1": 98.64302436486604,
+      "fold_macro_f1_mean": 98.29201101928375,
+      "fold_macro_f1_sd": 3.415977961432503,
+      "per_class": {
+        "Healthy": {
+          "precision": 99.67105263157895,
+          "recall": 100.0,
+          "f1": 99.835255354201,
+          "support": 303
+        },
+        "Powdery Mildew": {
+          "precision": 100.0,
+          "recall": 100.0,
+          "f1": 100.0,
+          "support": 43
+        },
+        "Early Blight": {
+          "precision": 100.0,
+          "recall": 100.0,
+          "f1": 100.0,
+          "support": 14
+        },
+        "Late Blight": {
+          "precision": 100.0,
+          "recall": 90.0,
+          "f1": 94.73684210526315,
+          "support": 10
+        }
+      }
+    },
+    "Text + symbolic (Plain MLP 389-d)": {
+      "accuracy": 99.45945945945947,
+      "weighted_f1": 99.44823112586269,
+      "macro_f1": 97.6760477582846,
+      "fold_macro_f1_mean": 97.53640299094845,
+      "fold_macro_f1_sd": 3.3721712635417487,
+      "per_class": {
+        "Healthy": {
+          "precision": 99.34426229508196,
+          "recall": 100.0,
+          "f1": 99.67105263157895,
+          "support": 303
+        },
+        "Powdery Mildew": {
+          "precision": 100.0,
+          "recall": 100.0,
+          "f1": 100.0,
+          "support": 43
+        },
+        "Early Blight": {
+          "precision": 100.0,
+          "recall": 92.85714285714286,
+          "f1": 96.29629629629629,
+          "support": 14
+        },
+        "Late Blight": {
+          "precision": 100.0,
+          "recall": 90.0,
+          "f1": 94.73684210526315,
+          "support": 10
+        }
+      }
+    },
+    "TF-IDF + Logistic Regression": {
+      "accuracy": 94.32432432432432,
+      "weighted_f1": 92.10617597614502,
+      "macro_f1": 57.98620883760203,
+      "fold_macro_f1_mean": 57.83037020905923,
+      "fold_macro_f1_sd": 7.647434234696165,
+      "per_class": {
+        "Healthy": {
+          "precision": 93.51851851851852,
+          "recall": 100.0,
+          "f1": 96.65071770334929,
+          "support": 303
+        },
+        "Powdery Mildew": {
+          "precision": 100.0,
+          "recall": 100.0,
+          "f1": 100.0,
+          "support": 43
+        },
+        "Early Blight": {
+          "precision": 100.0,
+          "recall": 21.428571428571427,
+          "f1": 35.294117647058826,
+          "support": 14
+        },
+        "Late Blight": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 10
+        }
+      }
+    },
+    "NS-HTA pairwise (sanitized)": {
+      "accuracy": 99.72972972972973,
+      "weighted_f1": 99.72283998209603,
+      "macro_f1": 98.64302436486604,
+      "fold_macro_f1_mean": 98.29201101928375,
+      "fold_macro_f1_sd": 3.415977961432503,
+      "per_class": {
+        "Healthy": {
+          "precision": 99.67105263157895,
+          "recall": 100.0,
+          "f1": 99.835255354201,
+          "support": 303
+        },
+        "Powdery Mildew": {
+          "precision": 100.0,
+          "recall": 100.0,
+          "f1": 100.0,
+          "support": 43
+        },
+        "Early Blight": {
+          "precision": 100.0,
+          "recall": 100.0,
+          "f1": 100.0,
+          "support": 14
+        },
+        "Late Blight": {
+          "precision": 100.0,
+          "recall": 90.0,
+          "f1": 94.73684210526315,
+          "support": 10
+        }
+      }
+    },
+    "Pairwise without interaction": {
+      "accuracy": 99.72972972972973,
+      "weighted_f1": 99.72283998209603,
+      "macro_f1": 98.64302436486604,
+      "fold_macro_f1_mean": 98.29201101928375,
+      "fold_macro_f1_sd": 3.415977961432503,
+      "per_class": {
+        "Healthy": {
+          "precision": 99.67105263157895,
+          "recall": 100.0,
+          "f1": 99.835255354201,
+          "support": 303
+        },
+        "Powdery Mildew": {
+          "precision": 100.0,
+          "recall": 100.0,
+          "f1": 100.0,
+          "support": 43
+        },
+        "Early Blight": {
+          "precision": 100.0,
+          "recall": 100.0,
+          "f1": 100.0,
+          "support": 14
+        },
+        "Late Blight": {
+          "precision": 100.0,
+          "recall": 90.0,
+          "f1": 94.73684210526315,
+          "support": 10
+        }
+      }
+    },
+    "NS-HTA pairwise (Balanced Loss)": {
+      "accuracy": 99.72972972972973,
+      "weighted_f1": 99.72283998209603,
+      "macro_f1": 98.64302436486604,
+      "fold_macro_f1_mean": 98.29201101928375,
+      "fold_macro_f1_sd": 3.415977961432503,
+      "per_class": {
+        "Healthy": {
+          "precision": 99.67105263157895,
+          "recall": 100.0,
+          "f1": 99.835255354201,
+          "support": 303
+        },
+        "Powdery Mildew": {
+          "precision": 100.0,
+          "recall": 100.0,
+          "f1": 100.0,
+          "support": 43
+        },
+        "Early Blight": {
+          "precision": 100.0,
+          "recall": 100.0,
+          "f1": 100.0,
+          "support": 14
+        },
+        "Late Blight": {
+          "precision": 100.0,
+          "recall": 90.0,
+          "f1": 94.73684210526315,
+          "support": 10
+        }
+      }
+    }
+  },
+  "attribution": {
+    "A_text (Raw Mean |W|)": 0.3440600037574768,
+    "A_symbolic (Raw Mean |W|)": 0.1831776350736618,
+    "A_interaction (Raw Mean |W|)": 0.18821588158607483,
+    "A_text (Activation-Scaled)": 0.10891413688659668,
+    "A_symbolic (Activation-Scaled)": 0.0700947567820549,
+    "A_interaction (Activation-Scaled)": 0.02570386789739132,
+    "Causal_Impact_Delta_MacroF1": {
+      "Occlude Text Block (Drop in % F1)": 2.177858439201458,
+      "Occlude Symbolic Block (Drop in % F1)": 0.0,
+      "Occlude Interaction Block (Drop in % F1)": 8.618814573137584
+    }
+  },
+  "resource_profile": {
+    "parameter_breakdown": {
+      "W_T + b_T (Text Projection)": 12320,
+      "W_S + b_S (Symbolic Projection)": 192,
+      "W_C + b_C (Classification Head)": 388,
+      "Total Trainable Parameters": 12900
+    },
+    "total_parameters": 12900,
+    "model_memory_kb": 50.39,
+    "single_sample_latency_ms": 0.084,
+    "throughput_samples_per_sec": 11951.1,
+    "batch_32_latency_ms": 0.155
+  }
+}

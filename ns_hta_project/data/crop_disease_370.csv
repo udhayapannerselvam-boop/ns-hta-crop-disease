@@ -1,0 +1,371 @@
+record_id,image_id,label,class_idx,description
+REC_0328,IMG_PO_004,Powdery Mildew,1,Superficial white powdery fungal patches spreading across upper leaf lamina with mild leaf curling. Examined under standard daylight.
+REC_0034,IMG_HE_034,Healthy,0,"Healthy leaf canopy showing optimal development, completely free of blight or powdery mildew symptoms. Leaf margins remained firm."
+REC_0016,IMG_HE_016,Healthy,0,Healthy crop leaves exhibiting full turgor pressure; no yellowing or concentric ring spotting noted.
+REC_0315,IMG_PO_012,Powdery Mildew,1,Specimen inspection: White dusting and fungal mycelium observed covering leaf blades with mild leaf distortion and spots.
+REC_0058,IMG_HE_058,Healthy,0,"Field observation note: Healthy leaf canopy showing optimal development, completely free of blight or powdery mildew symptoms."
+REC_0240,IMG_HE_089,Healthy,0,Healthy crop leaves exhibiting full turgor pressure; no yellowing or concentric ring spotting noted. Examined under standard daylight.
+REC_0077,IMG_HE_077,Healthy,0,"Specimen inspection: Standard healthy vegetative stage, foliage exhibits smooth margins and absence of foliar pathogens."
+REC_0120,IMG_HE_120,Healthy,0,Healthy crop leaves exhibiting full turgor pressure; no yellowing or concentric ring spotting noted. Examined under standard daylight.
+REC_0306,IMG_PO_003,Powdery Mildew,1,"Field observation note: Prominent white powder coating both adaxial and abaxial surfaces, accompanied by tissue yellowing."
+REC_0127,IMG_HE_127,Healthy,0,Specimen inspection: Normal leaf structure with balanced chlorophyll distribution and no signs of bacterial or fungal infection.
+REC_0234,IMG_HE_083,Healthy,0,"Healthy leaf canopy showing optimal development, completely free of blight or powdery mildew symptoms. Leaf margins remained firm."
+REC_0040,IMG_HE_040,Healthy,0,Healthy crop leaves exhibiting full turgor pressure; no yellowing or concentric ring spotting noted. Examined under standard daylight.
+REC_0154,IMG_HE_003,Healthy,0,"Healthy leaf canopy showing optimal development, completely free of blight or powdery mildew symptoms. Leaf margins remained firm."
+REC_0056,IMG_HE_056,Healthy,0,Healthy crop leaves exhibiting full turgor pressure; no yellowing or concentric ring spotting noted.
+REC_0156,IMG_HE_005,Healthy,0,Vibrant green leaf tissue showing robust growth; no necrotic spots or chlorosis detected.
+REC_0279,IMG_HE_128,Healthy,0,Normal leaf structure with balanced chlorophyll distribution and no signs of bacterial or fungal infection. Leaf margins remained firm.
+REC_0001,IMG_HE_001,Healthy,0,"Normal vigorous plant foliage with uniform green coloration, no disease lesions observed on surface."
+REC_0232,IMG_HE_081,Healthy,0,Specimen inspection: Healthy crop leaves exhibiting full turgor pressure; no yellowing or concentric ring spotting noted.
+REC_0335,IMG_PO_011,Powdery Mildew,1,"Specimen inspection: Powdery mildew observed on older foliage, manifesting as dusty talcum-like white sporulation."
+REC_0102,IMG_HE_102,Healthy,0,"Specimen inspection: Leaf lamina presents intact cuticle, clean veins, and no evidence of fungal sporulation or blight."
+REC_0010,IMG_HE_010,Healthy,0,"Healthy leaf canopy showing optimal development, completely free of blight or powdery mildew symptoms. Examined under standard daylight."
+REC_0181,IMG_HE_030,Healthy,0,"Standard healthy vegetative stage, foliage exhibits smooth margins and absence of foliar pathogens."
+REC_0073,IMG_HE_073,Healthy,0,"Field observation note: Normal vigorous plant foliage with uniform green coloration, no disease lesions observed on surface."
+REC_0238,IMG_HE_087,Healthy,0,"Field observation note: Leaf lamina presents intact cuticle, clean veins, and no evidence of fungal sporulation or blight."
+REC_0256,IMG_HE_105,Healthy,0,Healthy crop leaves exhibiting full turgor pressure; no yellowing or concentric ring spotting noted.
+REC_0138,IMG_HE_138,Healthy,0,"Field observation note: Healthy leaf canopy showing optimal development, completely free of blight or powdery mildew symptoms."
+REC_0226,IMG_HE_075,Healthy,0,"Healthy leaf canopy showing optimal development, completely free of blight or powdery mildew symptoms."
+REC_0195,IMG_HE_044,Healthy,0,Upper and lower foliar surfaces appear clean and intact with no fungal spots or leaf curl visible. Examined under standard daylight.
+REC_0194,IMG_HE_043,Healthy,0,"Healthy leaf canopy showing optimal development, completely free of blight or powdery mildew symptoms. Leaf margins remained firm."
+REC_0367,IMG_LA_002,Late Blight,3,Specimen inspection: Irregular water-soaked dark lesions spreading rapidly across leaf tips and margins under humid conditions.
+REC_0026,IMG_HE_026,Healthy,0,"Healthy leaf canopy showing optimal development, completely free of blight or powdery mildew symptoms."
+REC_0109,IMG_HE_109,Healthy,0,"Standard healthy vegetative stage, foliage exhibits smooth margins and absence of foliar pathogens. Leaf margins remained firm."
+REC_0043,IMG_HE_043,Healthy,0,Field observation note: Upper and lower foliar surfaces appear clean and intact with no fungal spots or leaf curl visible.
+REC_0358,IMG_EA_005,Early Blight,2,Specimen inspection: Lower canopy leaves showing target spots with noticeable yellow halos and edge curling.
+REC_0289,IMG_HE_138,Healthy,0,"Normal vigorous plant foliage with uniform green coloration, no disease lesions observed on surface. Leaf margins remained firm."
+REC_0115,IMG_HE_115,Healthy,0,Upper and lower foliar surfaces appear clean and intact with no fungal spots or leaf curl visible. Examined under standard daylight.
+REC_0064,IMG_HE_064,Healthy,0,Healthy crop leaves exhibiting full turgor pressure; no yellowing or concentric ring spotting noted. Leaf margins remained firm.
+REC_0023,IMG_HE_023,Healthy,0,Field observation note: Normal leaf structure with balanced chlorophyll distribution and no signs of bacterial or fungal infection.
+REC_0153,IMG_HE_002,Healthy,0,"Field observation note: Normal vigorous plant foliage with uniform green coloration, no disease lesions observed on surface."
+REC_0177,IMG_HE_026,Healthy,0,"Specimen inspection: Normal vigorous plant foliage with uniform green coloration, no disease lesions observed on surface."
+REC_0250,IMG_HE_099,Healthy,0,"Healthy leaf canopy showing optimal development, completely free of blight or powdery mildew symptoms. Examined under standard daylight."
+REC_0298,IMG_HE_147,Healthy,0,"Field observation note: Healthy leaf canopy showing optimal development, completely free of blight or powdery mildew symptoms."
+REC_0031,IMG_HE_031,Healthy,0,Normal leaf structure with balanced chlorophyll distribution and no signs of bacterial or fungal infection.
+REC_0220,IMG_HE_069,Healthy,0,Vibrant green leaf tissue showing robust growth; no necrotic spots or chlorosis detected. Examined under standard daylight.
+REC_0110,IMG_HE_110,Healthy,0,"Leaf lamina presents intact cuticle, clean veins, and no evidence of fungal sporulation or blight. Examined under standard daylight."
+REC_0125,IMG_HE_125,Healthy,0,"Standard healthy vegetative stage, foliage exhibits smooth margins and absence of foliar pathogens. Examined under standard daylight."
+REC_0091,IMG_HE_091,Healthy,0,Upper and lower foliar surfaces appear clean and intact with no fungal spots or leaf curl visible.
+REC_0057,IMG_HE_057,Healthy,0,"Specimen inspection: Normal vigorous plant foliage with uniform green coloration, no disease lesions observed on surface."
+REC_0006,IMG_HE_006,Healthy,0,"Leaf lamina presents intact cuticle, clean veins, and no evidence of fungal sporulation or blight."
+REC_0046,IMG_HE_046,Healthy,0,"Leaf lamina presents intact cuticle, clean veins, and no evidence of fungal sporulation or blight."
+REC_0352,IMG_EA_006,Early Blight,2,Lower canopy leaves showing target spots with noticeable yellow halos and edge curling.
+REC_0146,IMG_HE_146,Healthy,0,"Healthy leaf canopy showing optimal development, completely free of blight or powdery mildew symptoms."
+REC_0287,IMG_HE_136,Healthy,0,Specimen inspection: Normal leaf structure with balanced chlorophyll distribution and no signs of bacterial or fungal infection.
+REC_0219,IMG_HE_068,Healthy,0,Upper and lower foliar surfaces appear clean and intact with no fungal spots or leaf curl visible. Leaf margins remained firm.
+REC_0251,IMG_HE_100,Healthy,0,Upper and lower foliar surfaces appear clean and intact with no fungal spots or leaf curl visible.
+REC_0343,IMG_PO_019,Powdery Mildew,1,Patches of powdery white fungal growth with slight chlorosis and marginal upward rolling of leaflets. Examined under standard daylight.
+REC_0094,IMG_HE_094,Healthy,0,"Leaf lamina presents intact cuticle, clean veins, and no evidence of fungal sporulation or blight. Leaf margins remained firm."
+REC_0004,IMG_HE_004,Healthy,0,Vibrant green leaf tissue showing robust growth; no necrotic spots or chlorosis detected. Leaf margins remained firm.
+REC_0350,IMG_EA_004,Early Blight,2,Early blight symptoms exhibiting small irregular brown spots gradually coalescing into target-like lesions. Leaf margins remained firm.
+REC_0078,IMG_HE_078,Healthy,0,"Field observation note: Leaf lamina presents intact cuticle, clean veins, and no evidence of fungal sporulation or blight."
+REC_0133,IMG_HE_133,Healthy,0,"Field observation note: Standard healthy vegetative stage, foliage exhibits smooth margins and absence of foliar pathogens."
+REC_0311,IMG_PO_008,Powdery Mildew,1,"Field observation note: Powdery mildew observed on older foliage, manifesting as dusty talcum-like white sporulation."
+REC_0079,IMG_HE_079,Healthy,0,Normal leaf structure with balanced chlorophyll distribution and no signs of bacterial or fungal infection. Leaf margins remained firm.
+REC_0047,IMG_HE_047,Healthy,0,Specimen inspection: Normal leaf structure with balanced chlorophyll distribution and no signs of bacterial or fungal infection.
+REC_0221,IMG_HE_070,Healthy,0,"Standard healthy vegetative stage, foliage exhibits smooth margins and absence of foliar pathogens."
+REC_0074,IMG_HE_074,Healthy,0,"Healthy leaf canopy showing optimal development, completely free of blight or powdery mildew symptoms. Leaf margins remained firm."
+REC_0230,IMG_HE_079,Healthy,0,"Leaf lamina presents intact cuticle, clean veins, and no evidence of fungal sporulation or blight. Examined under standard daylight."
+REC_0327,IMG_PO_003,Powdery Mildew,1,White dusting and fungal mycelium observed covering leaf blades with mild leaf distortion and spots. Leaf margins remained firm.
+REC_0209,IMG_HE_058,Healthy,0,"Normal vigorous plant foliage with uniform green coloration, no disease lesions observed on surface. Leaf margins remained firm."
+REC_0083,IMG_HE_083,Healthy,0,Field observation note: Upper and lower foliar surfaces appear clean and intact with no fungal spots or leaf curl visible.
+REC_0095,IMG_HE_095,Healthy,0,Normal leaf structure with balanced chlorophyll distribution and no signs of bacterial or fungal infection. Examined under standard daylight.
+REC_0196,IMG_HE_045,Healthy,0,Vibrant green leaf tissue showing robust growth; no necrotic spots or chlorosis detected.
+REC_0312,IMG_PO_009,Powdery Mildew,1,"Prominent white powder coating both adaxial and abaxial surfaces, accompanied by tissue yellowing. Leaf margins remained firm."
+REC_0293,IMG_HE_142,Healthy,0,"Field observation note: Standard healthy vegetative stage, foliage exhibits smooth margins and absence of foliar pathogens."
+REC_0346,IMG_PO_001,Powdery Mildew,1,Field observation note: Superficial white powdery fungal patches spreading across upper leaf lamina with mild leaf curling.
+REC_0193,IMG_HE_042,Healthy,0,"Field observation note: Normal vigorous plant foliage with uniform green coloration, no disease lesions observed on surface."
+REC_0076,IMG_HE_076,Healthy,0,Vibrant green leaf tissue showing robust growth; no necrotic spots or chlorosis detected.
+REC_0085,IMG_HE_085,Healthy,0,"Standard healthy vegetative stage, foliage exhibits smooth margins and absence of foliar pathogens. Examined under standard daylight."
+REC_0359,IMG_EA_006,Early Blight,2,Field observation note: Distinct dark brown circular spots with characteristic concentric rings (target board pattern) on lower foliage.
+REC_0017,IMG_HE_017,Healthy,0,"Specimen inspection: Normal vigorous plant foliage with uniform green coloration, no disease lesions observed on surface."
+REC_0067,IMG_HE_067,Healthy,0,Specimen inspection: Upper and lower foliar surfaces appear clean and intact with no fungal spots or leaf curl visible.
+REC_0284,IMG_HE_133,Healthy,0,Vibrant green leaf tissue showing robust growth; no necrotic spots or chlorosis detected. Leaf margins remained firm.
+REC_0008,IMG_HE_008,Healthy,0,Field observation note: Healthy crop leaves exhibiting full turgor pressure; no yellowing or concentric ring spotting noted.
+REC_0114,IMG_HE_114,Healthy,0,"Healthy leaf canopy showing optimal development, completely free of blight or powdery mildew symptoms. Leaf margins remained firm."
+REC_0117,IMG_HE_117,Healthy,0,"Specimen inspection: Standard healthy vegetative stage, foliage exhibits smooth margins and absence of foliar pathogens."
+REC_0329,IMG_PO_005,Powdery Mildew,1,"Powdery mildew observed on older foliage, manifesting as dusty talcum-like white sporulation."
+REC_0324,IMG_PO_021,Powdery Mildew,1,"Prominent white powder coating both adaxial and abaxial surfaces, accompanied by tissue yellowing."
+REC_0275,IMG_HE_124,Healthy,0,Upper and lower foliar surfaces appear clean and intact with no fungal spots or leaf curl visible. Examined under standard daylight.
+REC_0164,IMG_HE_013,Healthy,0,Vibrant green leaf tissue showing robust growth; no necrotic spots or chlorosis detected. Leaf margins remained firm.
+REC_0111,IMG_HE_111,Healthy,0,Normal leaf structure with balanced chlorophyll distribution and no signs of bacterial or fungal infection.
+REC_0369,IMG_LA_004,Late Blight,3,"Rapidly expanding necrotic lesions with water-soaked edges on foliage, typical of late blight collapse. Leaf margins remained firm."
+REC_0061,IMG_HE_061,Healthy,0,"Standard healthy vegetative stage, foliage exhibits smooth margins and absence of foliar pathogens."
+REC_0158,IMG_HE_007,Healthy,0,"Field observation note: Leaf lamina presents intact cuticle, clean veins, and no evidence of fungal sporulation or blight."
+REC_0322,IMG_PO_019,Powdery Mildew,1,Superficial white powdery fungal patches spreading across upper leaf lamina with mild leaf curling. Leaf margins remained firm.
+REC_0223,IMG_HE_072,Healthy,0,Field observation note: Normal leaf structure with balanced chlorophyll distribution and no signs of bacterial or fungal infection.
+REC_0228,IMG_HE_077,Healthy,0,Field observation note: Vibrant green leaf tissue showing robust growth; no necrotic spots or chlorosis detected.
+REC_0142,IMG_HE_142,Healthy,0,"Specimen inspection: Leaf lamina presents intact cuticle, clean veins, and no evidence of fungal sporulation or blight."
+REC_0018,IMG_HE_018,Healthy,0,"Field observation note: Healthy leaf canopy showing optimal development, completely free of blight or powdery mildew symptoms."
+REC_0247,IMG_HE_096,Healthy,0,Specimen inspection: Normal leaf structure with balanced chlorophyll distribution and no signs of bacterial or fungal infection.
+REC_0025,IMG_HE_025,Healthy,0,"Normal vigorous plant foliage with uniform green coloration, no disease lesions observed on surface. Examined under standard daylight."
+REC_0203,IMG_HE_052,Healthy,0,Field observation note: Upper and lower foliar surfaces appear clean and intact with no fungal spots or leaf curl visible.
+REC_0326,IMG_PO_002,Powdery Mildew,1,Field observation note: Severe powdery mildew infection causing white velvety residue and localized premature defoliation.
+REC_0362,IMG_LA_002,Late Blight,3,Specimen inspection: Late blight infection characterized by greasy water-soaked brown patches and pale green margins.
+REC_0259,IMG_HE_108,Healthy,0,Upper and lower foliar surfaces appear clean and intact with no fungal spots or leaf curl visible. Leaf margins remained firm.
+REC_0141,IMG_HE_141,Healthy,0,"Standard healthy vegetative stage, foliage exhibits smooth margins and absence of foliar pathogens."
+REC_0348,IMG_EA_002,Early Blight,2,Specimen inspection: Early blight lesions present on mature leaves with yellow chlorotic halos surrounding necrotic centers.
+REC_0235,IMG_HE_084,Healthy,0,Upper and lower foliar surfaces appear clean and intact with no fungal spots or leaf curl visible. Examined under standard daylight.
+REC_0366,IMG_LA_001,Late Blight,3,Severe foliar blighting with wet necrotic blotches causing rapid leaf wilt and tissue collapse.
+REC_0302,IMG_HE_151,Healthy,0,"Specimen inspection: Leaf lamina presents intact cuticle, clean veins, and no evidence of fungal sporulation or blight."
+REC_0334,IMG_PO_010,Powdery Mildew,1,Superficial white powdery fungal patches spreading across upper leaf lamina with mild leaf curling.
+REC_0272,IMG_HE_121,Healthy,0,Specimen inspection: Healthy crop leaves exhibiting full turgor pressure; no yellowing or concentric ring spotting noted.
+REC_0173,IMG_HE_022,Healthy,0,"Field observation note: Standard healthy vegetative stage, foliage exhibits smooth margins and absence of foliar pathogens."
+REC_0197,IMG_HE_046,Healthy,0,"Specimen inspection: Standard healthy vegetative stage, foliage exhibits smooth margins and absence of foliar pathogens."
+REC_0020,IMG_HE_020,Healthy,0,Vibrant green leaf tissue showing robust growth; no necrotic spots or chlorosis detected. Examined under standard daylight.
+REC_0355,IMG_EA_002,Early Blight,2,Alternaria leaf spots showing dark concentric rings and localized leaf tissue yellowing. Leaf margins remained firm.
+REC_0080,IMG_HE_080,Healthy,0,Healthy crop leaves exhibiting full turgor pressure; no yellowing or concentric ring spotting noted. Examined under standard daylight.
+REC_0168,IMG_HE_017,Healthy,0,Field observation note: Healthy crop leaves exhibiting full turgor pressure; no yellowing or concentric ring spotting noted.
+REC_0019,IMG_HE_019,Healthy,0,Upper and lower foliar surfaces appear clean and intact with no fungal spots or leaf curl visible. Leaf margins remained firm.
+REC_0199,IMG_HE_048,Healthy,0,Normal leaf structure with balanced chlorophyll distribution and no signs of bacterial or fungal infection. Leaf margins remained firm.
+REC_0105,IMG_HE_105,Healthy,0,"Normal vigorous plant foliage with uniform green coloration, no disease lesions observed on surface. Examined under standard daylight."
+REC_0286,IMG_HE_135,Healthy,0,"Leaf lamina presents intact cuticle, clean veins, and no evidence of fungal sporulation or blight."
+REC_0119,IMG_HE_119,Healthy,0,Normal leaf structure with balanced chlorophyll distribution and no signs of bacterial or fungal infection. Leaf margins remained firm.
+REC_0351,IMG_EA_005,Early Blight,2,"Brown necrotic spots with concentric zones on foliage, typical of early blight infection. Examined under standard daylight."
+REC_0032,IMG_HE_032,Healthy,0,Specimen inspection: Healthy crop leaves exhibiting full turgor pressure; no yellowing or concentric ring spotting noted.
+REC_0037,IMG_HE_037,Healthy,0,"Specimen inspection: Standard healthy vegetative stage, foliage exhibits smooth margins and absence of foliar pathogens."
+REC_0159,IMG_HE_008,Healthy,0,Normal leaf structure with balanced chlorophyll distribution and no signs of bacterial or fungal infection. Leaf margins remained firm.
+REC_0184,IMG_HE_033,Healthy,0,Healthy crop leaves exhibiting full turgor pressure; no yellowing or concentric ring spotting noted. Leaf margins remained firm.
+REC_0169,IMG_HE_018,Healthy,0,"Normal vigorous plant foliage with uniform green coloration, no disease lesions observed on surface. Leaf margins remained firm."
+REC_0303,IMG_HE_001,Healthy,0,Field observation note: Normal leaf structure with balanced chlorophyll distribution and no signs of bacterial or fungal infection.
+REC_0140,IMG_HE_140,Healthy,0,Vibrant green leaf tissue showing robust growth; no necrotic spots or chlorosis detected. Examined under standard daylight.
+REC_0337,IMG_PO_013,Powdery Mildew,1,Patches of powdery white fungal growth with slight chlorosis and marginal upward rolling of leaflets. Leaf margins remained firm.
+REC_0176,IMG_HE_025,Healthy,0,Healthy crop leaves exhibiting full turgor pressure; no yellowing or concentric ring spotting noted.
+REC_0060,IMG_HE_060,Healthy,0,Vibrant green leaf tissue showing robust growth; no necrotic spots or chlorosis detected. Examined under standard daylight.
+REC_0112,IMG_HE_112,Healthy,0,Specimen inspection: Healthy crop leaves exhibiting full turgor pressure; no yellowing or concentric ring spotting noted.
+REC_0149,IMG_HE_149,Healthy,0,"Standard healthy vegetative stage, foliage exhibits smooth margins and absence of foliar pathogens. Leaf margins remained firm."
+REC_0007,IMG_HE_007,Healthy,0,Specimen inspection: Normal leaf structure with balanced chlorophyll distribution and no signs of bacterial or fungal infection.
+REC_0273,IMG_HE_122,Healthy,0,"Field observation note: Normal vigorous plant foliage with uniform green coloration, no disease lesions observed on surface."
+REC_0254,IMG_HE_103,Healthy,0,"Leaf lamina presents intact cuticle, clean veins, and no evidence of fungal sporulation or blight. Leaf margins remained firm."
+REC_0011,IMG_HE_011,Healthy,0,Upper and lower foliar surfaces appear clean and intact with no fungal spots or leaf curl visible.
+REC_0239,IMG_HE_088,Healthy,0,Normal leaf structure with balanced chlorophyll distribution and no signs of bacterial or fungal infection. Leaf margins remained firm.
+REC_0104,IMG_HE_104,Healthy,0,Healthy crop leaves exhibiting full turgor pressure; no yellowing or concentric ring spotting noted. Leaf margins remained firm.
+REC_0082,IMG_HE_082,Healthy,0,"Specimen inspection: Healthy leaf canopy showing optimal development, completely free of blight or powdery mildew symptoms."
+REC_0183,IMG_HE_032,Healthy,0,Field observation note: Normal leaf structure with balanced chlorophyll distribution and no signs of bacterial or fungal infection.
+REC_0266,IMG_HE_115,Healthy,0,"Healthy leaf canopy showing optimal development, completely free of blight or powdery mildew symptoms."
+REC_0224,IMG_HE_073,Healthy,0,Healthy crop leaves exhibiting full turgor pressure; no yellowing or concentric ring spotting noted. Leaf margins remained firm.
+REC_0297,IMG_HE_146,Healthy,0,"Specimen inspection: Normal vigorous plant foliage with uniform green coloration, no disease lesions observed on surface."
+REC_0353,IMG_EA_007,Early Blight,2,Specimen inspection: Distinct dark brown circular spots with characteristic concentric rings (target board pattern) on lower foliage.
+REC_0319,IMG_PO_016,Powdery Mildew,1,Patches of powdery white fungal growth with slight chlorosis and marginal upward rolling of leaflets.
+REC_0148,IMG_HE_148,Healthy,0,Field observation note: Vibrant green leaf tissue showing robust growth; no necrotic spots or chlorosis detected.
+REC_0204,IMG_HE_053,Healthy,0,Vibrant green leaf tissue showing robust growth; no necrotic spots or chlorosis detected. Leaf margins remained firm.
+REC_0093,IMG_HE_093,Healthy,0,"Field observation note: Standard healthy vegetative stage, foliage exhibits smooth margins and absence of foliar pathogens."
+REC_0070,IMG_HE_070,Healthy,0,"Leaf lamina presents intact cuticle, clean veins, and no evidence of fungal sporulation or blight. Examined under standard daylight."
+REC_0345,IMG_PO_021,Powdery Mildew,1,Specimen inspection: White dusting and fungal mycelium observed covering leaf blades with mild leaf distortion and spots.
+REC_0097,IMG_HE_097,Healthy,0,"Specimen inspection: Normal vigorous plant foliage with uniform green coloration, no disease lesions observed on surface."
+REC_0144,IMG_HE_144,Healthy,0,Healthy crop leaves exhibiting full turgor pressure; no yellowing or concentric ring spotting noted. Leaf margins remained firm.
+REC_0282,IMG_HE_131,Healthy,0,"Specimen inspection: Healthy leaf canopy showing optimal development, completely free of blight or powdery mildew symptoms."
+REC_0098,IMG_HE_098,Healthy,0,"Field observation note: Healthy leaf canopy showing optimal development, completely free of blight or powdery mildew symptoms."
+REC_0317,IMG_PO_014,Powdery Mildew,1,"Powdery mildew observed on older foliage, manifesting as dusty talcum-like white sporulation. Leaf margins remained firm."
+REC_0069,IMG_HE_069,Healthy,0,"Standard healthy vegetative stage, foliage exhibits smooth margins and absence of foliar pathogens. Leaf margins remained firm."
+REC_0024,IMG_HE_024,Healthy,0,Healthy crop leaves exhibiting full turgor pressure; no yellowing or concentric ring spotting noted. Leaf margins remained firm.
+REC_0038,IMG_HE_038,Healthy,0,"Field observation note: Leaf lamina presents intact cuticle, clean veins, and no evidence of fungal sporulation or blight."
+REC_0145,IMG_HE_145,Healthy,0,"Normal vigorous plant foliage with uniform green coloration, no disease lesions observed on surface. Examined under standard daylight."
+REC_0123,IMG_HE_123,Healthy,0,Field observation note: Upper and lower foliar surfaces appear clean and intact with no fungal spots or leaf curl visible.
+REC_0068,IMG_HE_068,Healthy,0,Field observation note: Vibrant green leaf tissue showing robust growth; no necrotic spots or chlorosis detected.
+REC_0166,IMG_HE_015,Healthy,0,"Leaf lamina presents intact cuticle, clean veins, and no evidence of fungal sporulation or blight."
+REC_0354,IMG_EA_001,Early Blight,2,Field observation note: Early blight lesions present on mature leaves with yellow chlorotic halos surrounding necrotic centers.
+REC_0295,IMG_HE_144,Healthy,0,Normal leaf structure with balanced chlorophyll distribution and no signs of bacterial or fungal infection. Examined under standard daylight.
+REC_0174,IMG_HE_023,Healthy,0,"Leaf lamina presents intact cuticle, clean veins, and no evidence of fungal sporulation or blight. Leaf margins remained firm."
+REC_0126,IMG_HE_126,Healthy,0,"Leaf lamina presents intact cuticle, clean veins, and no evidence of fungal sporulation or blight."
+REC_0147,IMG_HE_147,Healthy,0,Specimen inspection: Upper and lower foliar surfaces appear clean and intact with no fungal spots or leaf curl visible.
+REC_0211,IMG_HE_060,Healthy,0,Upper and lower foliar surfaces appear clean and intact with no fungal spots or leaf curl visible.
+REC_0087,IMG_HE_087,Healthy,0,Specimen inspection: Normal leaf structure with balanced chlorophyll distribution and no signs of bacterial or fungal infection.
+REC_0313,IMG_PO_010,Powdery Mildew,1,Patches of powdery white fungal growth with slight chlorosis and marginal upward rolling of leaflets. Examined under standard daylight.
+REC_0182,IMG_HE_031,Healthy,0,"Specimen inspection: Leaf lamina presents intact cuticle, clean veins, and no evidence of fungal sporulation or blight."
+REC_0347,IMG_EA_001,Early Blight,2,Distinct dark brown circular spots with characteristic concentric rings (target board pattern) on lower foliage.
+REC_0178,IMG_HE_027,Healthy,0,"Field observation note: Healthy leaf canopy showing optimal development, completely free of blight or powdery mildew symptoms."
+REC_0281,IMG_HE_130,Healthy,0,"Normal vigorous plant foliage with uniform green coloration, no disease lesions observed on surface."
+REC_0365,IMG_LA_005,Late Blight,3,Large brownish water-soaked lesions with pale halos spreading across terminal leaf lobes. Examined under standard daylight.
+REC_0263,IMG_HE_112,Healthy,0,Field observation note: Normal leaf structure with balanced chlorophyll distribution and no signs of bacterial or fungal infection.
+REC_0291,IMG_HE_140,Healthy,0,Upper and lower foliar surfaces appear clean and intact with no fungal spots or leaf curl visible.
+REC_0262,IMG_HE_111,Healthy,0,"Specimen inspection: Leaf lamina presents intact cuticle, clean veins, and no evidence of fungal sporulation or blight."
+REC_0130,IMG_HE_130,Healthy,0,"Healthy leaf canopy showing optimal development, completely free of blight or powdery mildew symptoms. Examined under standard daylight."
+REC_0039,IMG_HE_039,Healthy,0,Normal leaf structure with balanced chlorophyll distribution and no signs of bacterial or fungal infection. Leaf margins remained firm.
+REC_0012,IMG_HE_012,Healthy,0,Specimen inspection: Vibrant green leaf tissue showing robust growth; no necrotic spots or chlorosis detected.
+REC_0246,IMG_HE_095,Healthy,0,"Leaf lamina presents intact cuticle, clean veins, and no evidence of fungal sporulation or blight."
+REC_0186,IMG_HE_035,Healthy,0,"Healthy leaf canopy showing optimal development, completely free of blight or powdery mildew symptoms."
+REC_0305,IMG_PO_002,Powdery Mildew,1,"Specimen inspection: Powdery mildew observed on older foliage, manifesting as dusty talcum-like white sporulation."
+REC_0113,IMG_HE_113,Healthy,0,"Field observation note: Normal vigorous plant foliage with uniform green coloration, no disease lesions observed on surface."
+REC_0180,IMG_HE_029,Healthy,0,Vibrant green leaf tissue showing robust growth; no necrotic spots or chlorosis detected. Examined under standard daylight.
+REC_0245,IMG_HE_094,Healthy,0,"Standard healthy vegetative stage, foliage exhibits smooth margins and absence of foliar pathogens. Examined under standard daylight."
+REC_0233,IMG_HE_082,Healthy,0,"Field observation note: Normal vigorous plant foliage with uniform green coloration, no disease lesions observed on surface."
+REC_0118,IMG_HE_118,Healthy,0,"Field observation note: Leaf lamina presents intact cuticle, clean veins, and no evidence of fungal sporulation or blight."
+REC_0342,IMG_PO_018,Powdery Mildew,1,"Prominent white powder coating both adaxial and abaxial surfaces, accompanied by tissue yellowing. Leaf margins remained firm."
+REC_0357,IMG_EA_004,Early Blight,2,"Brown necrotic spots with concentric zones on foliage, typical of early blight infection."
+REC_0267,IMG_HE_116,Healthy,0,Specimen inspection: Upper and lower foliar surfaces appear clean and intact with no fungal spots or leaf curl visible.
+REC_0336,IMG_PO_012,Powdery Mildew,1,"Field observation note: Prominent white powder coating both adaxial and abaxial surfaces, accompanied by tissue yellowing."
+REC_0165,IMG_HE_014,Healthy,0,"Standard healthy vegetative stage, foliage exhibits smooth margins and absence of foliar pathogens. Examined under standard daylight."
+REC_0225,IMG_HE_074,Healthy,0,"Normal vigorous plant foliage with uniform green coloration, no disease lesions observed on surface. Examined under standard daylight."
+REC_0137,IMG_HE_137,Healthy,0,"Specimen inspection: Normal vigorous plant foliage with uniform green coloration, no disease lesions observed on surface."
+REC_0155,IMG_HE_004,Healthy,0,Upper and lower foliar surfaces appear clean and intact with no fungal spots or leaf curl visible. Examined under standard daylight.
+REC_0200,IMG_HE_049,Healthy,0,Healthy crop leaves exhibiting full turgor pressure; no yellowing or concentric ring spotting noted. Examined under standard daylight.
+REC_0198,IMG_HE_047,Healthy,0,"Field observation note: Leaf lamina presents intact cuticle, clean veins, and no evidence of fungal sporulation or blight."
+REC_0363,IMG_LA_003,Late Blight,3,"Field observation note: Rapidly expanding necrotic lesions with water-soaked edges on foliage, typical of late blight collapse."
+REC_0003,IMG_HE_003,Healthy,0,Field observation note: Upper and lower foliar surfaces appear clean and intact with no fungal spots or leaf curl visible.
+REC_0292,IMG_HE_141,Healthy,0,Specimen inspection: Vibrant green leaf tissue showing robust growth; no necrotic spots or chlorosis detected.
+REC_0116,IMG_HE_116,Healthy,0,Vibrant green leaf tissue showing robust growth; no necrotic spots or chlorosis detected.
+REC_0210,IMG_HE_059,Healthy,0,"Healthy leaf canopy showing optimal development, completely free of blight or powdery mildew symptoms. Examined under standard daylight."
+REC_0212,IMG_HE_061,Healthy,0,Specimen inspection: Vibrant green leaf tissue showing robust growth; no necrotic spots or chlorosis detected.
+REC_0027,IMG_HE_027,Healthy,0,Specimen inspection: Upper and lower foliar surfaces appear clean and intact with no fungal spots or leaf curl visible.
+REC_0121,IMG_HE_121,Healthy,0,"Normal vigorous plant foliage with uniform green coloration, no disease lesions observed on surface."
+REC_0285,IMG_HE_134,Healthy,0,"Standard healthy vegetative stage, foliage exhibits smooth margins and absence of foliar pathogens. Examined under standard daylight."
+REC_0269,IMG_HE_118,Healthy,0,"Standard healthy vegetative stage, foliage exhibits smooth margins and absence of foliar pathogens. Leaf margins remained firm."
+REC_0333,IMG_PO_009,Powdery Mildew,1,White dusting and fungal mycelium observed covering leaf blades with mild leaf distortion and spots. Examined under standard daylight.
+REC_0128,IMG_HE_128,Healthy,0,Field observation note: Healthy crop leaves exhibiting full turgor pressure; no yellowing or concentric ring spotting noted.
+REC_0075,IMG_HE_075,Healthy,0,Upper and lower foliar surfaces appear clean and intact with no fungal spots or leaf curl visible. Examined under standard daylight.
+REC_0300,IMG_HE_149,Healthy,0,Vibrant green leaf tissue showing robust growth; no necrotic spots or chlorosis detected. Examined under standard daylight.
+REC_0030,IMG_HE_030,Healthy,0,"Leaf lamina presents intact cuticle, clean veins, and no evidence of fungal sporulation or blight. Examined under standard daylight."
+REC_0084,IMG_HE_084,Healthy,0,Vibrant green leaf tissue showing robust growth; no necrotic spots or chlorosis detected. Leaf margins remained firm.
+REC_0360,IMG_EA_007,Early Blight,2,Early blight lesions present on mature leaves with yellow chlorotic halos surrounding necrotic centers. Leaf margins remained firm.
+REC_0108,IMG_HE_108,Healthy,0,Field observation note: Vibrant green leaf tissue showing robust growth; no necrotic spots or chlorosis detected.
+REC_0243,IMG_HE_092,Healthy,0,Field observation note: Upper and lower foliar surfaces appear clean and intact with no fungal spots or leaf curl visible.
+REC_0323,IMG_PO_020,Powdery Mildew,1,"Powdery mildew observed on older foliage, manifesting as dusty talcum-like white sporulation. Examined under standard daylight."
+REC_0134,IMG_HE_134,Healthy,0,"Leaf lamina presents intact cuticle, clean veins, and no evidence of fungal sporulation or blight. Leaf margins remained firm."
+REC_0185,IMG_HE_034,Healthy,0,"Normal vigorous plant foliage with uniform green coloration, no disease lesions observed on surface. Examined under standard daylight."
+REC_0304,IMG_PO_001,Powdery Mildew,1,Superficial white powdery fungal patches spreading across upper leaf lamina with mild leaf curling.
+REC_0045,IMG_HE_045,Healthy,0,"Standard healthy vegetative stage, foliage exhibits smooth margins and absence of foliar pathogens. Examined under standard daylight."
+REC_0341,IMG_PO_017,Powdery Mildew,1,"Field observation note: Powdery mildew observed on older foliage, manifesting as dusty talcum-like white sporulation."
+REC_0066,IMG_HE_066,Healthy,0,"Healthy leaf canopy showing optimal development, completely free of blight or powdery mildew symptoms."
+REC_0276,IMG_HE_125,Healthy,0,Vibrant green leaf tissue showing robust growth; no necrotic spots or chlorosis detected.
+REC_0086,IMG_HE_086,Healthy,0,"Leaf lamina presents intact cuticle, clean veins, and no evidence of fungal sporulation or blight."
+REC_0187,IMG_HE_036,Healthy,0,Specimen inspection: Upper and lower foliar surfaces appear clean and intact with no fungal spots or leaf curl visible.
+REC_0071,IMG_HE_071,Healthy,0,Normal leaf structure with balanced chlorophyll distribution and no signs of bacterial or fungal infection.
+REC_0160,IMG_HE_009,Healthy,0,Healthy crop leaves exhibiting full turgor pressure; no yellowing or concentric ring spotting noted. Examined under standard daylight.
+REC_0013,IMG_HE_013,Healthy,0,"Field observation note: Standard healthy vegetative stage, foliage exhibits smooth margins and absence of foliar pathogens."
+REC_0036,IMG_HE_036,Healthy,0,Vibrant green leaf tissue showing robust growth; no necrotic spots or chlorosis detected.
+REC_0029,IMG_HE_029,Healthy,0,"Standard healthy vegetative stage, foliage exhibits smooth margins and absence of foliar pathogens. Leaf margins remained firm."
+REC_0171,IMG_HE_020,Healthy,0,Upper and lower foliar surfaces appear clean and intact with no fungal spots or leaf curl visible.
+REC_0143,IMG_HE_143,Healthy,0,Field observation note: Normal leaf structure with balanced chlorophyll distribution and no signs of bacterial or fungal infection.
+REC_0299,IMG_HE_148,Healthy,0,Upper and lower foliar surfaces appear clean and intact with no fungal spots or leaf curl visible. Leaf margins remained firm.
+REC_0248,IMG_HE_097,Healthy,0,Field observation note: Healthy crop leaves exhibiting full turgor pressure; no yellowing or concentric ring spotting noted.
+REC_0151,IMG_HE_151,Healthy,0,Normal leaf structure with balanced chlorophyll distribution and no signs of bacterial or fungal infection.
+REC_0229,IMG_HE_078,Healthy,0,"Standard healthy vegetative stage, foliage exhibits smooth margins and absence of foliar pathogens. Leaf margins remained firm."
+REC_0222,IMG_HE_071,Healthy,0,"Specimen inspection: Leaf lamina presents intact cuticle, clean veins, and no evidence of fungal sporulation or blight."
+REC_0132,IMG_HE_132,Healthy,0,Specimen inspection: Vibrant green leaf tissue showing robust growth; no necrotic spots or chlorosis detected.
+REC_0249,IMG_HE_098,Healthy,0,"Normal vigorous plant foliage with uniform green coloration, no disease lesions observed on surface. Leaf margins remained firm."
+REC_0052,IMG_HE_052,Healthy,0,Specimen inspection: Vibrant green leaf tissue showing robust growth; no necrotic spots or chlorosis detected.
+REC_0241,IMG_HE_090,Healthy,0,"Normal vigorous plant foliage with uniform green coloration, no disease lesions observed on surface."
+REC_0278,IMG_HE_127,Healthy,0,"Field observation note: Leaf lamina presents intact cuticle, clean veins, and no evidence of fungal sporulation or blight."
+REC_0096,IMG_HE_096,Healthy,0,Healthy crop leaves exhibiting full turgor pressure; no yellowing or concentric ring spotting noted.
+REC_0283,IMG_HE_132,Healthy,0,Field observation note: Upper and lower foliar surfaces appear clean and intact with no fungal spots or leaf curl visible.
+REC_0179,IMG_HE_028,Healthy,0,Upper and lower foliar surfaces appear clean and intact with no fungal spots or leaf curl visible. Leaf margins remained firm.
+REC_0205,IMG_HE_054,Healthy,0,"Standard healthy vegetative stage, foliage exhibits smooth margins and absence of foliar pathogens. Examined under standard daylight."
+REC_0124,IMG_HE_124,Healthy,0,Vibrant green leaf tissue showing robust growth; no necrotic spots or chlorosis detected. Leaf margins remained firm.
+REC_0042,IMG_HE_042,Healthy,0,"Specimen inspection: Healthy leaf canopy showing optimal development, completely free of blight or powdery mildew symptoms."
+REC_0090,IMG_HE_090,Healthy,0,"Healthy leaf canopy showing optimal development, completely free of blight or powdery mildew symptoms. Examined under standard daylight."
+REC_0288,IMG_HE_137,Healthy,0,Field observation note: Healthy crop leaves exhibiting full turgor pressure; no yellowing or concentric ring spotting noted.
+REC_0207,IMG_HE_056,Healthy,0,Specimen inspection: Normal leaf structure with balanced chlorophyll distribution and no signs of bacterial or fungal infection.
+REC_0255,IMG_HE_104,Healthy,0,Normal leaf structure with balanced chlorophyll distribution and no signs of bacterial or fungal infection. Examined under standard daylight.
+REC_0308,IMG_PO_005,Powdery Mildew,1,Severe powdery mildew infection causing white velvety residue and localized premature defoliation. Examined under standard daylight.
+REC_0005,IMG_HE_005,Healthy,0,"Standard healthy vegetative stage, foliage exhibits smooth margins and absence of foliar pathogens. Examined under standard daylight."
+REC_0257,IMG_HE_106,Healthy,0,"Specimen inspection: Normal vigorous plant foliage with uniform green coloration, no disease lesions observed on surface."
+REC_0332,IMG_PO_008,Powdery Mildew,1,Severe powdery mildew infection causing white velvety residue and localized premature defoliation. Leaf margins remained firm.
+REC_0101,IMG_HE_101,Healthy,0,"Standard healthy vegetative stage, foliage exhibits smooth margins and absence of foliar pathogens."
+REC_0227,IMG_HE_076,Healthy,0,Specimen inspection: Upper and lower foliar surfaces appear clean and intact with no fungal spots or leaf curl visible.
+REC_0318,IMG_PO_015,Powdery Mildew,1,"Prominent white powder coating both adaxial and abaxial surfaces, accompanied by tissue yellowing. Examined under standard daylight."
+REC_0214,IMG_HE_063,Healthy,0,"Leaf lamina presents intact cuticle, clean veins, and no evidence of fungal sporulation or blight. Leaf margins remained firm."
+REC_0172,IMG_HE_021,Healthy,0,Specimen inspection: Vibrant green leaf tissue showing robust growth; no necrotic spots or chlorosis detected.
+REC_0099,IMG_HE_099,Healthy,0,Upper and lower foliar surfaces appear clean and intact with no fungal spots or leaf curl visible. Leaf margins remained firm.
+REC_0216,IMG_HE_065,Healthy,0,Healthy crop leaves exhibiting full turgor pressure; no yellowing or concentric ring spotting noted.
+REC_0062,IMG_HE_062,Healthy,0,"Specimen inspection: Leaf lamina presents intact cuticle, clean veins, and no evidence of fungal sporulation or blight."
+REC_0048,IMG_HE_048,Healthy,0,Field observation note: Healthy crop leaves exhibiting full turgor pressure; no yellowing or concentric ring spotting noted.
+REC_0033,IMG_HE_033,Healthy,0,"Field observation note: Normal vigorous plant foliage with uniform green coloration, no disease lesions observed on surface."
+REC_0268,IMG_HE_117,Healthy,0,Field observation note: Vibrant green leaf tissue showing robust growth; no necrotic spots or chlorosis detected.
+REC_0201,IMG_HE_050,Healthy,0,"Normal vigorous plant foliage with uniform green coloration, no disease lesions observed on surface."
+REC_0330,IMG_PO_006,Powdery Mildew,1,"Specimen inspection: Prominent white powder coating both adaxial and abaxial surfaces, accompanied by tissue yellowing."
+REC_0028,IMG_HE_028,Healthy,0,Field observation note: Vibrant green leaf tissue showing robust growth; no necrotic spots or chlorosis detected.
+REC_0290,IMG_HE_139,Healthy,0,"Healthy leaf canopy showing optimal development, completely free of blight or powdery mildew symptoms. Examined under standard daylight."
+REC_0231,IMG_HE_080,Healthy,0,Normal leaf structure with balanced chlorophyll distribution and no signs of bacterial or fungal infection.
+REC_0261,IMG_HE_110,Healthy,0,"Standard healthy vegetative stage, foliage exhibits smooth margins and absence of foliar pathogens."
+REC_0163,IMG_HE_012,Healthy,0,Field observation note: Upper and lower foliar surfaces appear clean and intact with no fungal spots or leaf curl visible.
+REC_0325,IMG_PO_001,Powdery Mildew,1,Specimen inspection: Patches of powdery white fungal growth with slight chlorosis and marginal upward rolling of leaflets.
+REC_0139,IMG_HE_139,Healthy,0,Upper and lower foliar surfaces appear clean and intact with no fungal spots or leaf curl visible. Leaf margins remained firm.
+REC_0063,IMG_HE_063,Healthy,0,Field observation note: Normal leaf structure with balanced chlorophyll distribution and no signs of bacterial or fungal infection.
+REC_0136,IMG_HE_136,Healthy,0,Healthy crop leaves exhibiting full turgor pressure; no yellowing or concentric ring spotting noted.
+REC_0129,IMG_HE_129,Healthy,0,"Normal vigorous plant foliage with uniform green coloration, no disease lesions observed on surface. Leaf margins remained firm."
+REC_0009,IMG_HE_009,Healthy,0,"Normal vigorous plant foliage with uniform green coloration, no disease lesions observed on surface. Leaf margins remained firm."
+REC_0065,IMG_HE_065,Healthy,0,"Normal vigorous plant foliage with uniform green coloration, no disease lesions observed on surface. Examined under standard daylight."
+REC_0015,IMG_HE_015,Healthy,0,Normal leaf structure with balanced chlorophyll distribution and no signs of bacterial or fungal infection. Examined under standard daylight.
+REC_0157,IMG_HE_006,Healthy,0,"Specimen inspection: Standard healthy vegetative stage, foliage exhibits smooth margins and absence of foliar pathogens."
+REC_0041,IMG_HE_041,Healthy,0,"Normal vigorous plant foliage with uniform green coloration, no disease lesions observed on surface."
+REC_0340,IMG_PO_016,Powdery Mildew,1,Specimen inspection: Superficial white powdery fungal patches spreading across upper leaf lamina with mild leaf curling.
+REC_0301,IMG_HE_150,Healthy,0,"Standard healthy vegetative stage, foliage exhibits smooth margins and absence of foliar pathogens."
+REC_0217,IMG_HE_066,Healthy,0,"Specimen inspection: Normal vigorous plant foliage with uniform green coloration, no disease lesions observed on surface."
+REC_0280,IMG_HE_129,Healthy,0,Healthy crop leaves exhibiting full turgor pressure; no yellowing or concentric ring spotting noted. Examined under standard daylight.
+REC_0321,IMG_PO_018,Powdery Mildew,1,Field observation note: White dusting and fungal mycelium observed covering leaf blades with mild leaf distortion and spots.
+REC_0237,IMG_HE_086,Healthy,0,"Specimen inspection: Standard healthy vegetative stage, foliage exhibits smooth margins and absence of foliar pathogens."
+REC_0208,IMG_HE_057,Healthy,0,Field observation note: Healthy crop leaves exhibiting full turgor pressure; no yellowing or concentric ring spotting noted.
+REC_0213,IMG_HE_062,Healthy,0,"Field observation note: Standard healthy vegetative stage, foliage exhibits smooth margins and absence of foliar pathogens."
+REC_0296,IMG_HE_145,Healthy,0,Healthy crop leaves exhibiting full turgor pressure; no yellowing or concentric ring spotting noted.
+REC_0338,IMG_PO_014,Powdery Mildew,1,Severe powdery mildew infection causing white velvety residue and localized premature defoliation. Examined under standard daylight.
+REC_0252,IMG_HE_101,Healthy,0,Specimen inspection: Vibrant green leaf tissue showing robust growth; no necrotic spots or chlorosis detected.
+REC_0361,IMG_LA_001,Late Blight,3,Irregular water-soaked dark lesions spreading rapidly across leaf tips and margins under humid conditions.
+REC_0339,IMG_PO_015,Powdery Mildew,1,White dusting and fungal mycelium observed covering leaf blades with mild leaf distortion and spots.
+REC_0270,IMG_HE_119,Healthy,0,"Leaf lamina presents intact cuticle, clean veins, and no evidence of fungal sporulation or blight. Examined under standard daylight."
+REC_0202,IMG_HE_051,Healthy,0,"Specimen inspection: Healthy leaf canopy showing optimal development, completely free of blight or powdery mildew symptoms."
+REC_0162,IMG_HE_011,Healthy,0,"Specimen inspection: Healthy leaf canopy showing optimal development, completely free of blight or powdery mildew symptoms."
+REC_0044,IMG_HE_044,Healthy,0,Vibrant green leaf tissue showing robust growth; no necrotic spots or chlorosis detected. Leaf margins remained firm.
+REC_0218,IMG_HE_067,Healthy,0,"Field observation note: Healthy leaf canopy showing optimal development, completely free of blight or powdery mildew symptoms."
+REC_0191,IMG_HE_040,Healthy,0,Normal leaf structure with balanced chlorophyll distribution and no signs of bacterial or fungal infection.
+REC_0310,IMG_PO_007,Powdery Mildew,1,Specimen inspection: Superficial white powdery fungal patches spreading across upper leaf lamina with mild leaf curling.
+REC_0260,IMG_HE_109,Healthy,0,Vibrant green leaf tissue showing robust growth; no necrotic spots or chlorosis detected. Examined under standard daylight.
+REC_0106,IMG_HE_106,Healthy,0,"Healthy leaf canopy showing optimal development, completely free of blight or powdery mildew symptoms."
+REC_0054,IMG_HE_054,Healthy,0,"Leaf lamina presents intact cuticle, clean veins, and no evidence of fungal sporulation or blight. Leaf margins remained firm."
+REC_0002,IMG_HE_002,Healthy,0,"Specimen inspection: Healthy leaf canopy showing optimal development, completely free of blight or powdery mildew symptoms."
+REC_0050,IMG_HE_050,Healthy,0,"Healthy leaf canopy showing optimal development, completely free of blight or powdery mildew symptoms. Examined under standard daylight."
+REC_0081,IMG_HE_081,Healthy,0,"Normal vigorous plant foliage with uniform green coloration, no disease lesions observed on surface."
+REC_0206,IMG_HE_055,Healthy,0,"Leaf lamina presents intact cuticle, clean veins, and no evidence of fungal sporulation or blight."
+REC_0035,IMG_HE_035,Healthy,0,Upper and lower foliar surfaces appear clean and intact with no fungal spots or leaf curl visible. Examined under standard daylight.
+REC_0264,IMG_HE_113,Healthy,0,Healthy crop leaves exhibiting full turgor pressure; no yellowing or concentric ring spotting noted. Leaf margins remained firm.
+REC_0092,IMG_HE_092,Healthy,0,Specimen inspection: Vibrant green leaf tissue showing robust growth; no necrotic spots or chlorosis detected.
+REC_0053,IMG_HE_053,Healthy,0,"Field observation note: Standard healthy vegetative stage, foliage exhibits smooth margins and absence of foliar pathogens."
+REC_0265,IMG_HE_114,Healthy,0,"Normal vigorous plant foliage with uniform green coloration, no disease lesions observed on surface. Examined under standard daylight."
+REC_0242,IMG_HE_091,Healthy,0,"Specimen inspection: Healthy leaf canopy showing optimal development, completely free of blight or powdery mildew symptoms."
+REC_0014,IMG_HE_014,Healthy,0,"Leaf lamina presents intact cuticle, clean veins, and no evidence of fungal sporulation or blight. Leaf margins remained firm."
+REC_0316,IMG_PO_013,Powdery Mildew,1,Field observation note: Superficial white powdery fungal patches spreading across upper leaf lamina with mild leaf curling.
+REC_0089,IMG_HE_089,Healthy,0,"Normal vigorous plant foliage with uniform green coloration, no disease lesions observed on surface. Leaf margins remained firm."
+REC_0274,IMG_HE_123,Healthy,0,"Healthy leaf canopy showing optimal development, completely free of blight or powdery mildew symptoms. Leaf margins remained firm."
+REC_0167,IMG_HE_016,Healthy,0,Specimen inspection: Normal leaf structure with balanced chlorophyll distribution and no signs of bacterial or fungal infection.
+REC_0364,IMG_LA_004,Late Blight,3,Phytophthora symptoms: dark purplish-brown water-soaked spots on foliage with delicate white mold beneath. Leaf margins remained firm.
+REC_0135,IMG_HE_135,Healthy,0,Normal leaf structure with balanced chlorophyll distribution and no signs of bacterial or fungal infection. Examined under standard daylight.
+REC_0307,IMG_PO_004,Powdery Mildew,1,Patches of powdery white fungal growth with slight chlorosis and marginal upward rolling of leaflets. Leaf margins remained firm.
+REC_0356,IMG_EA_003,Early Blight,2,Early blight symptoms exhibiting small irregular brown spots gradually coalescing into target-like lesions. Examined under standard daylight.
+REC_0320,IMG_PO_017,Powdery Mildew,1,Specimen inspection: Severe powdery mildew infection causing white velvety residue and localized premature defoliation.
+REC_0244,IMG_HE_093,Healthy,0,Vibrant green leaf tissue showing robust growth; no necrotic spots or chlorosis detected. Leaf margins remained firm.
+REC_0055,IMG_HE_055,Healthy,0,Normal leaf structure with balanced chlorophyll distribution and no signs of bacterial or fungal infection. Examined under standard daylight.
+REC_0051,IMG_HE_051,Healthy,0,Upper and lower foliar surfaces appear clean and intact with no fungal spots or leaf curl visible.
+REC_0175,IMG_HE_024,Healthy,0,Normal leaf structure with balanced chlorophyll distribution and no signs of bacterial or fungal infection. Examined under standard daylight.
+REC_0190,IMG_HE_039,Healthy,0,"Leaf lamina presents intact cuticle, clean veins, and no evidence of fungal sporulation or blight. Examined under standard daylight."
+REC_0368,IMG_LA_003,Late Blight,3,Field observation note: Late blight infection characterized by greasy water-soaked brown patches and pale green margins.
+REC_0188,IMG_HE_037,Healthy,0,Field observation note: Vibrant green leaf tissue showing robust growth; no necrotic spots or chlorosis detected.
+REC_0170,IMG_HE_019,Healthy,0,"Healthy leaf canopy showing optimal development, completely free of blight or powdery mildew symptoms. Examined under standard daylight."
+REC_0059,IMG_HE_059,Healthy,0,Upper and lower foliar surfaces appear clean and intact with no fungal spots or leaf curl visible. Leaf margins remained firm.
+REC_0049,IMG_HE_049,Healthy,0,"Normal vigorous plant foliage with uniform green coloration, no disease lesions observed on surface. Leaf margins remained firm."
+REC_0236,IMG_HE_085,Healthy,0,Vibrant green leaf tissue showing robust growth; no necrotic spots or chlorosis detected.
+REC_0253,IMG_HE_102,Healthy,0,"Field observation note: Standard healthy vegetative stage, foliage exhibits smooth margins and absence of foliar pathogens."
+REC_0022,IMG_HE_022,Healthy,0,"Specimen inspection: Leaf lamina presents intact cuticle, clean veins, and no evidence of fungal sporulation or blight."
+REC_0314,IMG_PO_011,Powdery Mildew,1,Severe powdery mildew infection causing white velvety residue and localized premature defoliation.
+REC_0161,IMG_HE_010,Healthy,0,"Normal vigorous plant foliage with uniform green coloration, no disease lesions observed on surface."
+REC_0277,IMG_HE_126,Healthy,0,"Specimen inspection: Standard healthy vegetative stage, foliage exhibits smooth margins and absence of foliar pathogens."
+REC_0192,IMG_HE_041,Healthy,0,Specimen inspection: Healthy crop leaves exhibiting full turgor pressure; no yellowing or concentric ring spotting noted.
+REC_0294,IMG_HE_143,Healthy,0,"Leaf lamina presents intact cuticle, clean veins, and no evidence of fungal sporulation or blight. Leaf margins remained firm."
+REC_0344,IMG_PO_020,Powdery Mildew,1,Severe powdery mildew infection causing white velvety residue and localized premature defoliation.
+REC_0258,IMG_HE_107,Healthy,0,"Field observation note: Healthy leaf canopy showing optimal development, completely free of blight or powdery mildew symptoms."
+REC_0309,IMG_PO_006,Powdery Mildew,1,White dusting and fungal mycelium observed covering leaf blades with mild leaf distortion and spots.
+REC_0150,IMG_HE_150,Healthy,0,"Leaf lamina presents intact cuticle, clean veins, and no evidence of fungal sporulation or blight. Examined under standard daylight."
+REC_0131,IMG_HE_131,Healthy,0,Upper and lower foliar surfaces appear clean and intact with no fungal spots or leaf curl visible.
+REC_0152,IMG_HE_001,Healthy,0,Specimen inspection: Healthy crop leaves exhibiting full turgor pressure; no yellowing or concentric ring spotting noted.
+REC_0100,IMG_HE_100,Healthy,0,Vibrant green leaf tissue showing robust growth; no necrotic spots or chlorosis detected. Examined under standard daylight.
+REC_0088,IMG_HE_088,Healthy,0,Field observation note: Healthy crop leaves exhibiting full turgor pressure; no yellowing or concentric ring spotting noted.
+REC_0331,IMG_PO_007,Powdery Mildew,1,Field observation note: Patches of powdery white fungal growth with slight chlorosis and marginal upward rolling of leaflets.
+REC_0215,IMG_HE_064,Healthy,0,Normal leaf structure with balanced chlorophyll distribution and no signs of bacterial or fungal infection. Examined under standard daylight.
+REC_0122,IMG_HE_122,Healthy,0,"Specimen inspection: Healthy leaf canopy showing optimal development, completely free of blight or powdery mildew symptoms."
+REC_0370,IMG_LA_005,Late Blight,3,Phytophthora symptoms: dark purplish-brown water-soaked spots on foliage with delicate white mold beneath. Examined under standard daylight.
+REC_0021,IMG_HE_021,Healthy,0,"Standard healthy vegetative stage, foliage exhibits smooth margins and absence of foliar pathogens."
+REC_0189,IMG_HE_038,Healthy,0,"Standard healthy vegetative stage, foliage exhibits smooth margins and absence of foliar pathogens. Leaf margins remained firm."
+REC_0072,IMG_HE_072,Healthy,0,Specimen inspection: Healthy crop leaves exhibiting full turgor pressure; no yellowing or concentric ring spotting noted.
+REC_0107,IMG_HE_107,Healthy,0,Specimen inspection: Upper and lower foliar surfaces appear clean and intact with no fungal spots or leaf curl visible.
+REC_0271,IMG_HE_120,Healthy,0,Normal leaf structure with balanced chlorophyll distribution and no signs of bacterial or fungal infection.
+REC_0349,IMG_EA_003,Early Blight,2,Field observation note: Alternaria leaf spots showing dark concentric rings and localized leaf tissue yellowing.
+REC_0103,IMG_HE_103,Healthy,0,Field observation note: Normal leaf structure with balanced chlorophyll distribution and no signs of bacterial or fungal infection.

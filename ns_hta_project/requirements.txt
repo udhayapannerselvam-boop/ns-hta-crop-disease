@@ -1,0 +1,11 @@
+# Core Dependencies for NS-HTA Project
+numpy>=1.24.0
+scipy>=1.10.0
+scikit-learn>=1.2.0
+pandas>=1.5.0
+matplotlib>=3.6.0
+seaborn>=0.12.0
+
+# Optional Neural NLP & PyTorch support (Standard IEEE deep learning setup)
+sentence-transformers>=2.2.0
+torch>=2.0.0
